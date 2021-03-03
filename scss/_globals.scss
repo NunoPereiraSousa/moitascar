@@ -48,3 +48,17 @@ a:focus {
 .grid {
   display: grid;
 }
+
+// hides bellow iPadPro
+.hide-for-mobile {
+  @include breakpoint-down(iPadPro) {
+    display: none;
+  }
+}
+
+// hides above iPadPro
+.hide-for-desktop {
+  @include breakpoint-up(iPadPro) {
+    display: none;
+  }
+}
