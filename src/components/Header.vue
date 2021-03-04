@@ -8,18 +8,36 @@
     </div>
     <div class="header__mobile__menu hide-for-desktop">
       <div class="header__mobile__menu__links">
-        <h3><span>01</span> Homepage</h3>
-        <h3><span>02</span> Carros</h3>
-        <h3><span>03</span> Sobre Nós</h3>
-        <h3><span>04</span> Contactos</h3>
-        <h3><span>05</span> Fale Connosco</h3>
+        <div class="header__mobile__menu__links__topics flex flex-ai-c">
+          <h5>01</h5>
+          <h3>Homepage</h3>
+        </div>
+        <div class="header__mobile__menu__links__topics flex flex-ai-c">
+          <h5>02</h5>
+          <h3>Carros</h3>
+        </div>
+        <div class="header__mobile__menu__links__topics flex flex-ai-c">
+          <h5>03</h5>
+          <h3>Sobre Nós</h3>
+        </div>
+        <div class="header__mobile__menu__links__topics flex flex-ai-c">
+          <h5>04</h5>
+          <h3>Contactos</h3>
+        </div>
+        <div class="header__mobile__menu__links__topics flex flex-ai-c">
+          <h5>05</h5>
+          <h3>Fale Connosco</h3>
+        </div>
       </div>
-      <div class="header__mobile__menu__socials">
-        <h3>Facebook</h3>
-        <h3>WhatsApp</h3>
-      </div>
-      <div class="header__mobile__menu__policy">
-        <p>Privacy Policy & © Copy Right 2021</p>
+      <div class="header__mobile__menu__extra">
+        <div class="header__mobile__menu__extra__socials flex flex-ai-c">
+          <div class="header__mobile__menu__extra__socials__line"></div>
+          <h3>Facebook</h3>
+          <h3>WhatsApp</h3>
+        </div>
+        <div class="header__mobile__menu__extra__policy flex flex-jc-c">
+          <p>Privacy Policy & © Copy Right 2021</p>
+        </div>
       </div>
     </div>
     <div class="header__desktop hide-for-mobile"></div>
