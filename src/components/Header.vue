@@ -40,7 +40,28 @@
         </div>
       </div>
     </div>
-    <div class="header__desktop hide-for-mobile"></div>
+    <div class="header__desktop hide-for-mobile flex flex-ai-c flex-jc-fe">
+      <div class="header__desktop__links flex flex-ai-c">
+        <h5>01</h5>
+        <h3>Homepage</h3>
+      </div>
+      <div class="header__desktop__links flex flex-ai-c">
+        <h5>02</h5>
+        <h3>Carros</h3>
+      </div>
+      <div class="header__desktop__links flex flex-ai-c">
+        <h5>03</h5>
+        <h3>Sobre Nós</h3>
+      </div>
+      <div class="header__desktop__links flex flex-ai-c">
+        <h5>04</h5>
+        <h3>Contactos</h3>
+      </div>
+      <div class="header__desktop__links flex flex-ai-c">
+        <h5>05</h5>
+        <h3>Fale Connosco</h3>
+      </div>
+    </div>
   </nav>
 </template>
 

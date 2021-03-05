@@ -187,4 +187,32 @@
       }
     }
   }
+
+  &__desktop {
+    width: 100%;
+
+    &__links {
+      h5 {
+        font-size: $_15px;
+        margin-right: $_30px;
+        transform: rotate(-90deg);
+        font-weight: 400;
+        color: $green;
+
+        @include breakpoint-down(phone) {
+          margin: 0.75rem $_30px 0.75rem 0;
+        }
+      }
+
+      h3 {
+        font-weight: 500;
+        font-size: $_20px;
+
+        @include breakpoint-down(phone) {
+          font-size: $_18px;
+          margin: 0.75rem 0;
+        }
+      }
+    }
+  }
 }
