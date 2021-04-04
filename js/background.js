@@ -28,11 +28,12 @@ export function background() {
       1000
     );
 
-    if (window.innerWidth > 1700) {
-      camera.position.set(0, 10, -40);
-    } else {
+    if (window.innerWidth > 1500) {
       scene.position.x = -7;
       camera.position.set(-17, 7, -25);
+    } else {
+      scene.position.y = -7;
+      camera.position.set(0, 10, -40);
     }
 
     RectAreaLightUniformsLib.init();

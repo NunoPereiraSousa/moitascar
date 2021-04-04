@@ -1,5 +1,5 @@
 <template>
-  <div class="home flex flex-ai-c flex-jc-c">
+  <div class="home flex flex-jc-c">
     <div class="scene"></div>
     <div class="overlay"></div>
     <div class="home__info">
