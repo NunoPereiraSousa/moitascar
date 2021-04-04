@@ -1,20 +1,32 @@
 .header {
   width: 100%;
-  padding: 1rem 1.625rem;
+  padding: 1.25rem 1.625rem;
   position: fixed;
   top: 0;
   z-index: 999;
+
+  // box-shadow: 0 3px 10px rgba($color: $white, $alpha: 0.15);
 
   @include breakpoint-up(tablet) {
     padding: 2rem 2.625rem;
   }
 
+  @include breakpoint-up(desktop) {
+    padding: 1.5rem 4rem;
+  }
+
+  img {
+    width: 80px;
+  }
+
   &__title {
-    font-size: $_18px;
+    font-size: $_17px;
     text-transform: uppercase;
-    font-weight: 600;
-    color: $dark;
+    font-weight: 400;
+    color: $white;
     transition: all 0.5s ease;
+
+    margin: 0;
 
     @include breakpoint-down(phone) {
       font-size: $_16px;
@@ -32,7 +44,7 @@
 
     &__lines {
       height: 2.5px;
-      background-color: $dark;
+      background-color: $white;
       position: absolute;
       z-index: 999;
       right: 0%;
@@ -192,9 +204,12 @@
     width: 100%;
 
     &__links {
+      margin: 0 0 0 2rem;
+      cursor: pointer;
+
       h5 {
         font-size: $_15px;
-        margin-right: $_30px;
+        // margin-right: $_30px;
         transform: rotate(-90deg);
         font-weight: 400;
         color: $green;
@@ -205,8 +220,20 @@
       }
 
       h3 {
-        font-weight: 500;
-        font-size: $_20px;
+        font-weight: 400;
+        font-size: $_18px;
+
+        color: $white;
+
+        border-right: 1px solid rgba($color: $white, $alpha: 0.75);
+        padding: 0 2rem;
+
+        margin: 0;
+
+        &#no_border {
+          border-right: none !important;
+          padding-right: 0;
+        }
 
         @include breakpoint-down(phone) {
           font-size: $_18px;

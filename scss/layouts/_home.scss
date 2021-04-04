@@ -1,0 +1,109 @@
+.overlay {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  //   background-color: red;
+
+  @include breakpoint-up(iPadPro) {
+    display: block;
+  }
+
+  &__info {
+    padding: calc(8.1875rem + 2vw) 2rem;
+
+    color: $white;
+    text-align: center;
+
+    @include breakpoint-up(iPadPro) {
+      padding: calc(12.1875rem + 2vw) 10vw;
+
+      text-align: left;
+      display: block;
+    }
+
+    h3 {
+      font-family: $ibm;
+      font-weight: 500;
+      color: $green;
+      font-size: $_30px;
+
+      margin: 0;
+
+      @include breakpoint-up(iPadPro) {
+        font-size: $_40px;
+      }
+    }
+
+    hr {
+      width: 60px;
+      height: 2px;
+      background-color: $white;
+      border: none;
+
+      margin: 2rem auto;
+
+      @include breakpoint-up(iPadPro) {
+        margin: 2.5rem 0;
+        height: 3px;
+      }
+    }
+
+    p {
+      margin: 0;
+
+      font-size: $_18px;
+      font-family: $openSans;
+
+      @include breakpoint-up(iPadPro) {
+        font-size: $_20px;
+      }
+    }
+
+    button {
+      margin-top: 2rem;
+
+      background-color: transparent;
+      border: 1px solid $white;
+      border-radius: 2px;
+
+      font-size: $_16px;
+      font-weight: 500;
+      color: $white;
+
+      padding: 12px 30px;
+
+      cursor: pointer;
+
+      @include breakpoint-up(iPadPro) {
+        border: 1.5px solid $white;
+        margin-top: 2.5rem;
+      }
+    }
+  }
+
+  &__scroll_down {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    color: $white;
+
+    p {
+      margin: 0 0 1rem;
+      font-weight: 500;
+    }
+
+    i {
+      animation: up-down 2s infinite;
+    }
+  }
+}

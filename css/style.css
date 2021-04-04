@@ -1,3 +1,27 @@
+@-webkit-keyframes up-down {
+  0%,
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+  }
+  50% {
+    -webkit-transform: translateY(40%);
+            transform: translateY(40%);
+  }
+}
+
+@keyframes up-down {
+  0%,
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+  }
+  50% {
+    -webkit-transform: translateY(40%);
+            transform: translateY(40%);
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -7,6 +31,7 @@
 
 html,
 body {
+  height: 100%;
   width: 100%;
   margin: 0;
   overflow-x: hidden;
@@ -76,9 +101,19 @@ a:focus {
   }
 }
 
+.scene,
+canvas {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  z-index: -5;
+}
+
 .header {
   width: 100%;
-  padding: 1rem 1.625rem;
+  padding: 1.25rem 1.625rem;
   position: fixed;
   top: 0;
   z-index: 999;
@@ -90,13 +125,24 @@ a:focus {
   }
 }
 
+@media (min-width: 75em) {
+  .header {
+    padding: 1.5rem 4rem;
+  }
+}
+
+.header img {
+  width: 80px;
+}
+
 .header__title {
-  font-size: 1.125rem;
+  font-size: 1.0625rem;
   text-transform: uppercase;
-  font-weight: 600;
-  color: #0c1820;
+  font-weight: 400;
+  color: #ffffff;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  margin: 0;
 }
 
 @media (max-width: 23.375em) {
@@ -117,7 +163,7 @@ a:focus {
 
 .header__hamburger__lines {
   height: 2.5px;
-  background-color: #0c1820;
+  background-color: #ffffff;
   position: absolute;
   z-index: 999;
   right: 0%;
@@ -293,9 +339,13 @@ a:focus {
   width: 100%;
 }
 
+.header__desktop__links {
+  margin: 0 0 0 2rem;
+  cursor: pointer;
+}
+
 .header__desktop__links h5 {
   font-size: 0.9375rem;
-  margin-right: 1.875rem;
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
   font-weight: 400;
@@ -309,8 +359,17 @@ a:focus {
 }
 
 .header__desktop__links h3 {
-  font-weight: 500;
-  font-size: 1.25rem;
+  font-weight: 400;
+  font-size: 1.125rem;
+  color: #ffffff;
+  border-right: 1px solid rgba(255, 255, 255, 0.75);
+  padding: 0 2rem;
+  margin: 0;
+}
+
+.header__desktop__links h3#no_border {
+  border-right: none !important;
+  padding-right: 0;
 }
 
 @media (max-width: 23.375em) {
@@ -318,5 +377,130 @@ a:focus {
     font-size: 1.125rem;
     margin: 0.75rem 0;
   }
+}
+
+@keyframes up-down {
+  0%,
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+  }
+  50% {
+    -webkit-transform: translateY(40%);
+            transform: translateY(40%);
+  }
+}
+
+.overlay {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+@media (min-width: 64em) {
+  .home {
+    display: block;
+  }
+}
+
+.home__info {
+  padding: calc(8.1875rem + 2vw) 2rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+@media (min-width: 64em) {
+  .home__info {
+    padding: calc(12.1875rem + 2vw) 10vw;
+    text-align: left;
+    display: block;
+  }
+}
+
+.home__info h3 {
+  font-family: "IBM Plex Sans";
+  font-weight: 500;
+  color: #2cb28d;
+  font-size: 1.875rem;
+  margin: 0;
+}
+
+@media (min-width: 64em) {
+  .home__info h3 {
+    font-size: 2.5rem;
+  }
+}
+
+.home__info hr {
+  width: 60px;
+  height: 2px;
+  background-color: #ffffff;
+  border: none;
+  margin: 2rem auto;
+}
+
+@media (min-width: 64em) {
+  .home__info hr {
+    margin: 2.5rem 0;
+    height: 3px;
+  }
+}
+
+.home__info p {
+  margin: 0;
+  font-size: 1.125rem;
+  font-family: "Open Sans";
+}
+
+@media (min-width: 64em) {
+  .home__info p {
+    font-size: 1.25rem;
+  }
+}
+
+.home__info button {
+  margin-top: 2rem;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 2px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  padding: 12px 30px;
+  cursor: pointer;
+}
+
+@media (min-width: 64em) {
+  .home__info button {
+    border: 1.5px solid #ffffff;
+    margin-top: 2.5rem;
+  }
+}
+
+.home__scroll_down {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #ffffff;
+}
+
+.home__scroll_down p {
+  margin: 0 0 1rem;
+  font-weight: 500;
+}
+
+.home__scroll_down i {
+  -webkit-animation: up-down 2s infinite;
+          animation: up-down 2s infinite;
 }
 /*# sourceMappingURL=style.css.map */

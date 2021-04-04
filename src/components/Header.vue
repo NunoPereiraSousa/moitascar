@@ -1,6 +1,6 @@
 <template>
   <nav class="header flex flex-jc-sb flex-ai-c">
-    <h2 class="header__title hide-for-desktop">Moitas Car</h2>
+    <h2 class="header__title hide-for-desktop">Moitas Cars</h2>
     <div class="header__hamburger hide-for-desktop" @click="toggleNavbar">
       <div class="header__hamburger__lines"></div>
       <div class="header__hamburger__lines"></div>
@@ -24,10 +24,6 @@
           <h5>04</h5>
           <h3>Contactos</h3>
         </div>
-        <div class="header__mobile__menu__links__topics flex flex-ai-c">
-          <h5>05</h5>
-          <h3>Fale Connosco</h3>
-        </div>
       </div>
       <div class="header__mobile__menu__extra">
         <div class="header__mobile__menu__extra__socials flex flex-ai-c">
@@ -40,26 +36,25 @@
         </div>
       </div>
     </div>
-    <div class="header__desktop hide-for-mobile flex flex-ai-c flex-jc-fe">
-      <div class="header__desktop__links flex flex-ai-c">
-        <h5>01</h5>
-        <h3>Homepage</h3>
-      </div>
-      <div class="header__desktop__links flex flex-ai-c">
-        <h5>02</h5>
-        <h3>Carros</h3>
-      </div>
-      <div class="header__desktop__links flex flex-ai-c">
-        <h5>03</h5>
-        <h3>Sobre Nós</h3>
-      </div>
-      <div class="header__desktop__links flex flex-ai-c">
-        <h5>04</h5>
-        <h3>Contactos</h3>
-      </div>
-      <div class="header__desktop__links flex flex-ai-c">
-        <h5>05</h5>
-        <h3>Fale Connosco</h3>
+    <div class="header__desktop hide-for-mobile flex flex-ai-c flex-jc-sb">
+      <img src="../assets/Logo2.png" alt="" />
+      <div class="flex">
+        <div class="header__desktop__links flex flex-ai-c">
+          <h5>01</h5>
+          <h3>Homepage</h3>
+        </div>
+        <div class="header__desktop__links flex flex-ai-c">
+          <h5>02</h5>
+          <h3>Carros</h3>
+        </div>
+        <div class="header__desktop__links flex flex-ai-c">
+          <h5>03</h5>
+          <h3>Sobre Nós</h3>
+        </div>
+        <div class="header__desktop__links flex flex-ai-c">
+          <h5>04</h5>
+          <h3 id="no_border">Contactos</h3>
+        </div>
       </div>
     </div>
   </nav>
