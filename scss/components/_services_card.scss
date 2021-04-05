@@ -1,0 +1,41 @@
+.services__grid__card {
+  border-radius: 8px;
+  padding: 2rem 4rem;
+  box-shadow: 0 3px 30px rgba($color: $dark, $alpha: 0.07),
+    0 -3px 30px rgba($color: $dark, $alpha: 0.07);
+  background-color: $white;
+
+  text-align: center;
+
+  @include breakpoint-up(iPadPro) {
+    box-shadow: 0 3px 30px rgba($color: $dark, $alpha: 0.04),
+      0 -3px 30px rgba($color: $dark, $alpha: 0.04);
+  }
+
+  h1 {
+    position: relative;
+    margin: 0;
+
+    font-family: $ibm;
+    font-size: $_20px;
+    font-weight: 600;
+
+    padding-bottom: 1rem;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: $purple;
+      height: 2px;
+      width: 40px;
+    }
+  }
+
+  p {
+    margin: 2.5rem 0 0;
+    font-family: $openSans;
+  }
+}

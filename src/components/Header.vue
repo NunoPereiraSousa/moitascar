@@ -1,6 +1,6 @@
 <template>
   <nav class="header flex flex-jc-sb flex-ai-c">
-    <h2 class="header__title hide-for-desktop">Moitas Cars</h2>
+    <img class=" hide-for-desktop" src="../assets/Logo2.png" alt="" />
     <div class="header__hamburger hide-for-desktop" @click="toggleNavbar">
       <div class="header__hamburger__lines"></div>
       <div class="header__hamburger__lines"></div>

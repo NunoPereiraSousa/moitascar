@@ -113,7 +113,7 @@ canvas {
 
 .header {
   width: 100%;
-  padding: 1.75rem 1.625rem;
+  padding: 1rem 1.625rem;
   position: fixed;
   top: 0;
   z-index: 999;
@@ -132,7 +132,7 @@ canvas {
 }
 
 .header img {
-  width: 80px;
+  width: 60px;
 }
 
 .header__title {
@@ -391,18 +391,156 @@ canvas {
   }
 }
 
+.services__grid__card {
+  border-radius: 8px;
+  padding: 2rem 4rem;
+  -webkit-box-shadow: 0 3px 30px rgba(12, 24, 32, 0.07), 0 -3px 30px rgba(12, 24, 32, 0.07);
+          box-shadow: 0 3px 30px rgba(12, 24, 32, 0.07), 0 -3px 30px rgba(12, 24, 32, 0.07);
+  background-color: #ffffff;
+  text-align: center;
+}
+
+@media (min-width: 64em) {
+  .services__grid__card {
+    -webkit-box-shadow: 0 3px 30px rgba(12, 24, 32, 0.04), 0 -3px 30px rgba(12, 24, 32, 0.04);
+            box-shadow: 0 3px 30px rgba(12, 24, 32, 0.04), 0 -3px 30px rgba(12, 24, 32, 0.04);
+  }
+}
+
+.services__grid__card h1 {
+  position: relative;
+  margin: 0;
+  font-family: "IBM Plex Sans";
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding-bottom: 1rem;
+}
+
+.services__grid__card h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #432cb2;
+  height: 2px;
+  width: 40px;
+}
+
+.services__grid__card p {
+  margin: 2.5rem 0 0;
+  font-family: "Open Sans";
+}
+
+.cars__grid__card {
+  border-radius: 8px;
+  -webkit-box-shadow: 0 3px 40px rgba(97, 97, 97, 0.07), 0 -3px 40px rgba(97, 97, 97, 0.07);
+          box-shadow: 0 3px 40px rgba(97, 97, 97, 0.07), 0 -3px 40px rgba(97, 97, 97, 0.07);
+}
+
+.cars__grid__card img {
+  height: 12.875rem;
+  width: 100%;
+}
+
+.cars__grid__card__info {
+  padding: 1.25rem 1.125rem;
+}
+
+.cars__grid__card p {
+  color: #ffffff;
+}
+
+.cars__grid__card p b {
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+
+.cars__grid__card p:first-child {
+  margin-top: 0;
+}
+
+.cars__grid__card small {
+  color: rgba(255, 255, 255, 0.53);
+  font-style: italic;
+}
+
+.cars__grid__card button {
+  position: relative;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  height: 1.625rem;
+  width: 1.625rem;
+}
+
+.cars__grid__card button:focus {
+  outline: none;
+}
+
+.cars__grid__card button .lines {
+  position: absolute;
+  width: 2px;
+  height: 12px;
+  background-color: #2cb28d;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.cars__grid__card button .lines:nth-child(1) {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.cars__grid__card button .lines:nth-child(2) {
+  -webkit-transform: translate(-50%, -50%) rotate(90deg);
+          transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.cars__grid__card button .lines.minus:nth-child(1) {
+  height: 0;
+}
+
+@media (min-width: 64em) {
+  .cars__grid__card button .lines {
+    height: 0.75rem;
+  }
+}
+
+@media (min-width: 120em) {
+  .cars__grid__card button .lines {
+    height: 1rem;
+  }
+}
+
+.cars__grid__card hr {
+  background-color: #616161;
+  height: 1.5px;
+  width: 100%;
+  border: none;
+}
+
+.cars__grid__card .hide {
+  margin-top: 3rem;
+}
+
 .overlay {
   width: 100%;
   height: 100vh;
   position: absolute;
   z-index: -1;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.25);
 }
 
 .home {
   position: relative;
+  z-index: 1;
   width: 100%;
   height: 100vh;
+  background-color: #ffffff;
 }
 
 @media (min-width: 64em) {
@@ -412,7 +550,7 @@ canvas {
 }
 
 .home__info {
-  padding: calc(8.1875rem + 2vw) 2rem;
+  padding: calc(10.1875rem + 2vw) 2rem;
   color: #ffffff;
   text-align: center;
 }
@@ -420,7 +558,6 @@ canvas {
 @media (min-width: 64em) {
   .home__info {
     padding: calc(12.1875rem + 2vw) 10vw;
-    text-align: left;
     display: block;
   }
 }
@@ -428,14 +565,13 @@ canvas {
 .home__info h3 {
   font-family: "IBM Plex Sans";
   font-weight: 500;
-  color: #2cb28d;
   font-size: 1.875rem;
   margin: 0;
 }
 
 @media (min-width: 64em) {
   .home__info h3 {
-    font-size: 2.5rem;
+    font-size: 5.625rem;
   }
 }
 
@@ -449,7 +585,6 @@ canvas {
 
 @media (min-width: 64em) {
   .home__info hr {
-    margin: 2.5rem 0;
     height: 3px;
   }
 }
@@ -458,11 +593,12 @@ canvas {
   margin: 0;
   font-size: 1.125rem;
   font-family: "Open Sans";
+  color: #ffffff;
 }
 
 @media (min-width: 64em) {
   .home__info p {
-    font-size: 1.25rem;
+    font-size: 2.5rem;
   }
 }
 
@@ -502,5 +638,136 @@ canvas {
 .home__scroll_down i {
   -webkit-animation: up-down 2s infinite;
           animation: up-down 2s infinite;
+}
+
+.services {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 6rem 2rem;
+}
+
+@media (min-width: 48em) {
+  .services {
+    padding: 6rem 4rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .services {
+    padding: 8rem 6rem;
+  }
+}
+
+@media (min-width: 120em) {
+  .services {
+    padding: 10rem 12rem;
+  }
+}
+
+.services__grid {
+  row-gap: 3rem;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 48em) {
+  .services__grid {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    row-gap: 3rem;
+    -webkit-column-gap: 3rem;
+            column-gap: 3rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .services__grid {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 75em) {
+  .services__grid {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+    -webkit-column-gap: 4rem;
+            column-gap: 4rem;
+  }
+}
+
+@media (min-width: 120em) {
+  .services__grid {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+    -webkit-column-gap: 2rem;
+            column-gap: 2rem;
+  }
+}
+
+.cars {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 6rem 2rem;
+  background-color: #0c1820;
+}
+
+@media (min-width: 48em) {
+  .cars {
+    padding: 6rem 4rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .cars {
+    padding: 8rem 6rem;
+  }
+}
+
+@media (min-width: 120em) {
+  .cars {
+    padding: 10rem 12rem;
+  }
+}
+
+.cars__grid {
+  row-gap: 3rem;
+}
+
+@media (min-width: 48em) {
+  .cars__grid {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    row-gap: 3rem;
+    -webkit-column-gap: 3rem;
+            column-gap: 3rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .cars__grid {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 75em) {
+  .cars__grid {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+    -webkit-column-gap: 4rem;
+            column-gap: 4rem;
+  }
+}
+
+@media (min-width: 120em) {
+  .cars__grid {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+    -webkit-column-gap: 2rem;
+            column-gap: 2rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */

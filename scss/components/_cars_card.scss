@@ -1,0 +1,89 @@
+.cars__grid__card {
+  border-radius: 8px;
+  box-shadow: 0 3px 40px rgba($color: $grey, $alpha: 0.07),
+    0 -3px 40px rgba($color: $grey, $alpha: 0.07);
+
+  img {
+    height: 12.875rem;
+    width: 100%;
+  }
+
+  &__info {
+    padding: 1.25rem 1.125rem;
+  }
+
+  p {
+    color: $white;
+
+    b {
+      font-weight: 600;
+      font-size: $_15px;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  small {
+    color: rgba($color: $white, $alpha: 0.53);
+    font-style: italic;
+  }
+
+  button {
+    position: relative;
+    background-color: transparent;
+    // border: 1.5px solid $black;
+    border: none;
+    border-radius: 50%;
+    height: 1.625rem;
+    width: 1.625rem;
+
+    &:focus {
+      outline: none;
+    }
+
+    .lines {
+      position: absolute;
+      width: 2px;
+      height: 12px;
+      background-color: $green;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      &:nth-child(1) {
+        transition: all 0.5s ease;
+      }
+
+      &:nth-child(2) {
+        transform: translate(-50%, -50%) rotate(90deg);
+      }
+
+      &.minus {
+        &:nth-child(1) {
+          height: 0;
+        }
+      }
+
+      @include breakpoint-up(iPadPro) {
+        height: 0.75rem;
+      }
+
+      @include breakpoint-up(large) {
+        height: 1rem;
+      }
+    }
+  }
+
+  hr {
+    background-color: $grey;
+    height: 1.5px;
+    width: 100%;
+    border: none;
+  }
+
+  .hide {
+    margin-top: 3rem;
+  }
+}
