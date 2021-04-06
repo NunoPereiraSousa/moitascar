@@ -106,6 +106,74 @@
         </template>
       </vue-glide>
     </section>
+    <section class="map">
+      <SubTitle title="Onde estamos" class="light" />
+      <h3>Rua Arquitecto Lobão Vital 172, 4200-374 Porto</h3>
+      <div id="map"></div>
+    </section>
+    <section class="contacts">
+      <div class="contacts__grid grid">
+        <div>
+          <SubTitle title="Contactos" />
+          <div class="contacts__grid__info grid">
+            <div class="contacts__grid__info__phone grid">
+              <i class="fas fa-phone"></i>
+              <p>(+351) 917 523 009</p>
+            </div>
+            <div class="contacts__grid__info__location grid">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <p>R. Pádua Correia 46</p>
+                <p>4400-238 Vila Nova de Gaia</p>
+                <p>Portugal</p>
+              </div>
+            </div>
+            <div class="contacts__grid__info__time grid ">
+              <i class="fas fa-clock"></i>
+              <div>
+                <p>
+                  Domingo: Encerrado
+                </p>
+                <p>
+                  Segunda: 09:30 – 19:00
+                </p>
+                <p>
+                  Terça: 09:30 – 19:00
+                </p>
+                <p>
+                  Quarta: 09:30 – 19:00
+                </p>
+                <p>
+                  Quinta: 09:30 – 19:00
+                </p>
+                <p>
+                  Sexta: 09:30 – 19:00
+                </p>
+                <p>
+                  Sábado: 10:00 – 12:30
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <SubTitle title="Fale connosco" />
+          <form>
+            <input type="text" id="nameTxt" placeholder="Nome *" />
+            <input type="text" id="lastNameTxt" placeholder="Sobrenome *" />
+            <input type="email" id="emailTxt" placeholder="E-mail *" />
+            <input type="number" id="phoneTxt" placeholder="Telemóvel *" />
+            <textarea
+              id="contentTxt"
+              cols="30"
+              rows="6"
+              placeholder="Conteúdo da mensagem *"
+            ></textarea>
+            <input type="submit" value="Enviar" id="submit" />
+          </form>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -127,6 +195,20 @@ export default {
   },
   mounted() {
     background();
+
+    this.map = new window.google.maps.Map(document.getElementById("map"), {
+      center: new window.google.maps.LatLng(
+        41.128039958016494,
+        -8.610384859283357
+      ),
+      zoom: 18,
+      mapTypeId: "roadmap"
+    });
+
+    new window.google.maps.Marker({
+      position: { lat: 41.128039958016494, lng: -8.610384859283357 },
+      map: this.map
+    });
   }
 };
 </script>

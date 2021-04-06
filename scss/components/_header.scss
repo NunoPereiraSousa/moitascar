@@ -43,7 +43,7 @@
     position: relative;
 
     &__lines {
-      height: 2.5px;
+      height: 2px;
       background-color: $white;
       position: absolute;
       z-index: 999;
@@ -51,10 +51,6 @@
       border-radius: 4px;
       transition: all 0.5s ease;
       transform-origin: -0.5px center;
-
-      @include breakpoint-down(phone) {
-        height: 2px;
-      }
 
       &.open {
         background-color: $white;
@@ -72,12 +68,8 @@
         width: 1.5rem;
 
         &.open {
-          height: 2.5px;
+          height: 2px;
           width: 1.25rem;
-
-          @include breakpoint-down(phone) {
-            height: 2px;
-          }
         }
       }
 

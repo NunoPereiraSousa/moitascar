@@ -71,9 +71,6 @@ export default {
         line.classList.toggle("open");
       });
 
-      let title = document.querySelector(".header__title");
-      title.classList.toggle("change__color");
-
       let header__mobile__menu = document.querySelector(
         ".header__mobile__menu"
       );

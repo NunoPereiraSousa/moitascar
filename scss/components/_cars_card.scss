@@ -23,6 +23,10 @@
     &:first-child {
       margin-top: 0;
     }
+
+    &:nth-child(2) {
+      margin-bottom: 1.25rem;
+    }
   }
 
   small {

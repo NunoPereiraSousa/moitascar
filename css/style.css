@@ -162,7 +162,7 @@ canvas {
 }
 
 .header__hamburger__lines {
-  height: 2.5px;
+  height: 2px;
   background-color: #ffffff;
   position: absolute;
   z-index: 999;
@@ -172,12 +172,6 @@ canvas {
   transition: all 0.5s ease;
   -webkit-transform-origin: -0.5px center;
           transform-origin: -0.5px center;
-}
-
-@media (max-width: 23.375em) {
-  .header__hamburger__lines {
-    height: 2px;
-  }
 }
 
 .header__hamburger__lines.open {
@@ -196,14 +190,8 @@ canvas {
 }
 
 .header__hamburger__lines:nth-child(1).open, .header__hamburger__lines:nth-child(3).open {
-  height: 2.5px;
+  height: 2px;
   width: 1.25rem;
-}
-
-@media (max-width: 23.375em) {
-  .header__hamburger__lines:nth-child(1).open, .header__hamburger__lines:nth-child(3).open {
-    height: 2px;
-  }
 }
 
 .header__hamburger__lines:nth-child(2) {
@@ -391,6 +379,26 @@ canvas {
   }
 }
 
+footer {
+  padding: 2rem;
+  background-color: #0c1820;
+  text-align: center;
+}
+
+footer p {
+  color: #ffffff;
+  font-family: "IBM Plex Sans";
+  margin: 0 0 1.125rem;
+}
+
+footer p a {
+  color: #ffffff;
+}
+
+footer small {
+  color: rgba(255, 255, 255, 0.5);
+}
+
 .subtitle {
   position: relative;
   margin: 0 0 4rem;
@@ -505,6 +513,10 @@ canvas {
   margin-top: 0;
 }
 
+.cars__grid__card p:nth-child(2) {
+  margin-bottom: 1.25rem;
+}
+
 .cars__grid__card small {
   color: rgba(255, 255, 255, 0.53);
   font-style: italic;
@@ -578,7 +590,7 @@ canvas {
   border-radius: 8px;
   border-top: 3px solid #432cb2;
   padding: calc(calc(4.325rem / 2) + calc(3.125rem / 8)) 1.25rem 3.125rem;
-  margin: 30px 2rem 4rem;
+  margin: 0 2rem 3rem;
 }
 
 @media (min-width: 64em) {
@@ -945,5 +957,151 @@ canvas {
   .testimonials .glide__track + div button {
     margin: 1.875rem 10px;
   }
+}
+
+.map {
+  padding: 6rem 2rem;
+  position: relative;
+  z-index: 1;
+  background-color: #0c1820;
+}
+
+@media (min-width: 48em) {
+  .map {
+    padding: 6rem 4rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .map {
+    padding: 8rem 6rem;
+  }
+}
+
+@media (min-width: 120em) {
+  .map {
+    padding: 10rem 12rem;
+  }
+}
+
+.map h3 {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+@media (min-width: 48em) {
+  .map h3 {
+    font-size: 1.25rem;
+    margin: 1rem 0;
+  }
+}
+
+.map #map {
+  margin: 2rem 0 0;
+  height: 60vh;
+}
+
+.contacts {
+  padding: 6rem 2rem;
+}
+
+@media (min-width: 48em) {
+  .contacts {
+    padding: 6rem 4rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .contacts {
+    padding: 8rem 6rem;
+  }
+}
+
+@media (min-width: 120em) {
+  .contacts {
+    padding: 10rem 12rem;
+  }
+}
+
+.contacts__grid {
+  row-gap: 4rem;
+}
+
+.contacts__grid__info {
+  row-gap: 1.5rem;
+}
+
+.contacts__grid__info .grid {
+  -ms-grid-columns: min-content 1fr;
+      grid-template-columns: -webkit-min-content 1fr;
+      grid-template-columns: min-content 1fr;
+}
+
+.contacts__grid__info .grid i {
+  margin: 0.2rem 2rem 0 0;
+  font-size: 0.9375rem;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.contacts__grid__info .grid i.fa-phone {
+  margin-top: 0;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.contacts__grid__info .grid p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.contacts__grid__info .grid p:first-child {
+  margin: 0;
+}
+
+.contacts__grid form {
+  width: 100%;
+}
+
+.contacts__grid form input,
+.contacts__grid form textarea {
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #0c1820;
+  border-radius: 2px;
+}
+
+.contacts__grid form #submit {
+  background-color: #0c1820;
+  border: none;
+  color: #ffffff;
+  font-weight: 500;
+  padding: 1rem 1.25rem;
+  font-family: "IBM Plex Sans";
+  font-size: 1rem;
+}
+
+.contacts__grid form ::-webkit-input-placeholder {
+  color: #000000;
+  font-family: "Open Sans";
+}
+
+.contacts__grid form :-ms-input-placeholder {
+  color: #000000;
+  font-family: "Open Sans";
+}
+
+.contacts__grid form ::-ms-input-placeholder {
+  color: #000000;
+  font-family: "Open Sans";
+}
+
+.contacts__grid form ::placeholder {
+  color: #000000;
+  font-family: "Open Sans";
 }
 /*# sourceMappingURL=style.css.map */
