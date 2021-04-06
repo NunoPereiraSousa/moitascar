@@ -1,5 +1,5 @@
 <template>
-  <div class="cars__grid__card">
+  <div class="cars__grid__card" :id="card_id">
     <img :src="url" alt="carro" />
     <div class="cars__grid__card__info">
       <p><b>Preço:</b> {{ price }}€</p>
@@ -7,13 +7,13 @@
 
       <div class="flex flex-jc-sb flex-ai-c">
         <small>Publicado a {{ date }}</small>
-        <button>
+        <button @click="expand(index)" v-on:click="show = !show">
           <div class="lines"></div>
           <div class="lines"></div>
         </button>
       </div>
 
-      <div class="hide">
+      <div class="hide" v-if="show">
         <hr />
         <p><b>Ano: </b>{{ month }}, {{ year }}</p>
         <p><b>Total km: </b>{{ km }}km</p>
@@ -67,6 +67,34 @@ export default {
     extras: {
       type: String,
       required: true
+    },
+    index: {
+      type: Number,
+      required: true
+    },
+    card_id: {
+      type: String,
+      required: true
+    }
+  },
+  data: () => {
+    return {
+      show: false
+    };
+  },
+  methods: {
+    expand(index) {
+      this.selectedItem = index;
+
+      //   let card = document.querySelector(`#card_${index}`);
+
+      let lines = document.querySelectorAll(`#card${index} .lines`);
+
+      console.log(lines);
+
+      lines.forEach(line => {
+        line.classList.toggle("minus");
+      });
     }
   }
 };

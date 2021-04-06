@@ -33,3 +33,18 @@ $breakpoint-down: (
     @content;
   }
 }
+
+@mixin pseudo($type, $backgroundColor, $height, $width) {
+  &::#{$type} {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0%;
+    transform: translateX(-50%);
+    background-color: #{$backgroundColor};
+    height: #{$height};
+    width: #{$width};
+
+    box-shadow: 2px 2px 4px rgba($color: $dark, $alpha: 0.2);
+  }
+}

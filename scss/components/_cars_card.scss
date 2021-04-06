@@ -9,7 +9,7 @@
   }
 
   &__info {
-    padding: 1.25rem 1.125rem;
+    padding: 1.25rem 1.5rem;
   }
 
   p {
@@ -77,13 +77,15 @@
   }
 
   hr {
+    margin: 3rem auto;
     background-color: $grey;
-    height: 1.5px;
+    height: 1px;
     width: 100%;
     border: none;
   }
 
   .hide {
-    margin-top: 3rem;
+    font-family: $openSans;
+    // margin-top: 3rem;
   }
 }

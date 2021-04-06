@@ -21,6 +21,7 @@
       </div>
     </section>
     <section class="services">
+      <SubTitle title="Os nossos serviços" />
       <div class="services__grid grid">
         <ServicesCard
           v-for="i in 4"
@@ -31,10 +32,13 @@
       </div>
     </section>
     <section class="cars">
+      <SubTitle title="Carros à venda" class="light" />
       <div class="cars__grid grid">
         <CarsCard
-          v-for="i in 4"
+          v-for="i in 3"
           :key="i"
+          :index="i"
+          :card_id="`card${i}`"
           url="https://www.hyundai.com/content/hyundai/ww/data/news/data/2021/0000016609/image/newsroom-0112-photo-1-2021elantranline-1120x745.jpg"
           v-bind:price="50000"
           brand="Hyundai"
@@ -48,20 +52,78 @@
         />
       </div>
     </section>
+    <section class="testimonials">
+      <vue-glide
+        :startAt="1"
+        :gap="40"
+        :breakpoints="{
+          450: {
+            perView: 1
+          },
+          768: {
+            perView: 2
+          },
+          1024: {
+            perView: 2
+          },
+          1300: {
+            perView: 3
+          }
+        }"
+        :rewind="false"
+        :bound="true"
+        :infinite="false"
+      >
+        <vue-glide-slide v-for="i in 4" :key="i">
+          <TestimonialCard
+            content="Atendimento, simpatia, transparência nos negócios."
+            name="Neca Long"
+            date="07/06/2019"
+        /></vue-glide-slide>
+        <template slot="control">
+          <button data-glide-dir="<">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 400.004 400.004"
+              class="left__arrow"
+            >
+              <path
+                d="M382.688 182.686H59.116l77.209-77.214c6.764-6.76 6.764-17.726 0-24.485-6.764-6.764-17.73-6.764-24.484 0L5.073 187.757c-6.764 6.76-6.764 17.727 0 24.485l106.768 106.775a17.252 17.252 0 0012.242 5.072c4.43 0 8.861-1.689 12.242-5.072 6.764-6.76 6.764-17.726 0-24.484l-77.209-77.218h323.572c9.562 0 17.316-7.753 17.316-17.315 0-9.562-7.753-17.314-17.316-17.314z"
+              ></path>
+            </svg>
+          </button>
+          <button data-glide-dir=">">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 268.832 268.832"
+              class="right__arrow"
+            >
+              <path
+                d="M265.171 125.577l-80-80c-4.881-4.881-12.797-4.881-17.678 0-4.882 4.882-4.882 12.796 0 17.678l58.661 58.661H12.5c-6.903 0-12.5 5.597-12.5 12.5 0 6.902 5.597 12.5 12.5 12.5h213.654l-58.659 58.661c-4.882 4.882-4.882 12.796 0 17.678 2.44 2.439 5.64 3.661 8.839 3.661s6.398-1.222 8.839-3.661l79.998-80c4.882-4.882 4.882-12.796 0-17.678z"
+              ></path>
+            </svg>
+          </button>
+        </template>
+      </vue-glide>
+    </section>
   </div>
 </template>
 
 <script>
 import { background } from "../../js/background";
 
+import SubTitle from "@/components/SubTitle.vue";
 import ServicesCard from "@/components/ServicesCard.vue";
 import CarsCard from "@/components/CarsCard.vue";
+import TestimonialCard from "@/components/TestimonialCard.vue";
 
 export default {
   name: "Home",
   components: {
+    SubTitle,
     ServicesCard,
-    CarsCard
+    CarsCard,
+    TestimonialCard
   },
   mounted() {
     background();

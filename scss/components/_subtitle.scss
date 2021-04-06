@@ -1,0 +1,23 @@
+.subtitle {
+  position: relative;
+
+  margin: 0 0 4rem;
+  padding-bottom: 1rem;
+
+  font-weight: 600;
+  font-size: $_20px;
+  font-family: $ibm;
+
+  text-align: center;
+
+  text-shadow: 2px 2px 4px rgba($color: $dark, $alpha: 0.2);
+
+  @include pseudo(after, $dark, 2px, 32px);
+
+  &.light {
+    color: $white;
+
+    @include pseudo(after, $white, 2px, 32px);
+    text-shadow: 2px 2px 4px rgba($color: $white, $alpha: 0.2);
+  }
+}
