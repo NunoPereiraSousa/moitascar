@@ -1,30 +1,28 @@
 <template>
   <div>
     <section class="home">
-      <div class="scene"></div>
+      <!-- <div class="scene"></div>
+      <div class="overlay"></div> -->
       <div class="overlay"></div>
       <div class="home__info">
-        <h3>
-          <div>Stand automóvel</div>
-          <div>em Vila Nova de Gaia</div>
-        </h3>
+        <h3>Stand automóvel em Vila Nova de Gaia</h3>
 
-        <hr />
+        <!-- <hr /> -->
 
         <p>O seu novo carro é especial.</p>
 
         <!-- <button>Sobre Nós</button> -->
       </div>
-      <div class="home__scroll_down flex flex-fd-c flex-ai-c">
+      <!-- <div class="home__scroll_down flex flex-fd-c flex-ai-c">
         <p>Scroll down</p>
         <i class="fas fa-chevron-down"></i>
-      </div>
+      </div> -->
     </section>
     <section class="services">
-      <SubTitle title="Os nossos serviços" />
+      <SubTitle title="Os nossos serviços" class="hide-for-desktop" />
       <div class="services__grid grid">
         <ServicesCard
-          v-for="i in 4"
+          v-for="i in 3"
           :key="i"
           title="Venda de carros"
           content="Vendemos carros há mais de 26 anos."
@@ -33,7 +31,25 @@
     </section>
     <section class="cars">
       <SubTitle title="Carros à venda" class="light" />
-      <div class="cars__grid grid">
+      <div class="cars__grid grid show-above-phone">
+        <CarsCard
+          v-for="i in 3"
+          :key="i"
+          :index="i"
+          :card_id="`card${i}`"
+          url="https://www.hyundai.com/content/hyundai/ww/data/news/data/2021/0000016609/image/newsroom-0112-photo-1-2021elantranline-1120x745.jpg"
+          v-bind:price="50000"
+          brand="Hyundai"
+          model="Elantra"
+          date="01/03/2021"
+          month="janeiro"
+          :year="2018"
+          :km="15236"
+          :power="123"
+          extras="Colunas JBL, nitro e acentos estufados."
+        />
+      </div>
+      <div class="cars__grid__large grid hide-for-phone">
         <CarsCard
           v-for="i in 3"
           :key="i"
@@ -53,6 +69,7 @@
       </div>
     </section>
     <section class="testimonials">
+      <SubTitle title="O que dizem sobre nós" />
       <vue-glide
         :startAt="1"
         :gap="40"
@@ -178,7 +195,7 @@
 </template>
 
 <script>
-import { background } from "../../js/background";
+// import { background } from "../../js/background";
 
 import SubTitle from "@/components/SubTitle.vue";
 import ServicesCard from "@/components/ServicesCard.vue";
@@ -194,7 +211,7 @@ export default {
     TestimonialCard
   },
   mounted() {
-    background();
+    // background();
 
     this.map = new window.google.maps.Map(document.getElementById("map"), {
       center: new window.google.maps.LatLng(

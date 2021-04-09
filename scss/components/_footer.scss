@@ -12,9 +12,22 @@ footer {
     a {
       color: $white;
     }
+
+    @include breakpoint-up(tablet) {
+      font-size: $_17px;
+    }
   }
 
   small {
     color: rgba($color: $white, $alpha: 0.5);
+
+    @include breakpoint-up(tablet) {
+      padding: 1rem 1.25rem 0;
+      font-size: $_15px;
+    }
+
+    @include breakpoint-up(desktop) {
+      padding: 0;
+    }
   }
 }

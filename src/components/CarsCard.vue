@@ -1,24 +1,52 @@
 <template>
-  <div class="cars__grid__card" :id="card_id">
-    <img :src="url" alt="carro" />
-    <div class="cars__grid__card__info">
-      <p><b>Preço:</b> {{ price }}€</p>
-      <p><b>Marca & modelo:</b> {{ brand }}, {{ model }}</p>
+  <div>
+    <div class="cars__grid__card show-above-phone" :id="card_id">
+      <img :src="url" alt="carro" />
+      <div class="cars__grid__card__info">
+        <p><b>Preço:</b> {{ price }}€</p>
+        <p><b>Marca & modelo:</b> {{ brand }}, {{ model }}</p>
 
-      <div class="flex flex-jc-sb flex-ai-c">
-        <small>Publicado a {{ date }}</small>
-        <button @click="expand(index)" v-on:click="show = !show">
-          <div class="lines"></div>
-          <div class="lines"></div>
-        </button>
+        <div class="flex flex-jc-sb flex-ai-c">
+          <small>Publicado a {{ date }}</small>
+          <button @click="expand(index)" v-on:click="show = !show">
+            <div class="lines"></div>
+            <div class="lines"></div>
+          </button>
+        </div>
+
+        <div class="hide" v-if="show">
+          <hr />
+          <p><b>Ano: </b>{{ month }}, {{ year }}</p>
+          <p><b>Total km: </b>{{ km }}km</p>
+          <p><b>Cilindrada: </b>{{ power }}</p>
+          <p><b>Extras: </b>{{ extras }}</p>
+        </div>
       </div>
+    </div>
+    <div class="cars__grid__card__large grid hide-for-phone">
+      <img :src="url" alt="carro" />
+      <!-- <div>
+        <div class="flex flex-ai-c flex-jc-sb links__overlay">
+          <i class="fab fa-facebook-square"></i>
+          <a href="">Stand Imovirtual</a>
+        </div>
+      </div> -->
 
-      <div class="hide" v-if="show">
-        <hr />
-        <p><b>Ano: </b>{{ month }}, {{ year }}</p>
-        <p><b>Total km: </b>{{ km }}km</p>
+      <div class="cars__grid__card__large__info">
+        <h3>{{ brand }}, {{ model }}</h3>
+        <!-- <p><b>Preço:</b> {{ price }}€</p> -->
+        <p><i class="far fa-calendar-alt"></i>{{ month }}, {{ year }}</p>
+        <p><i class="fas fa-road"></i>{{ km }}km</p>
         <p><b>Cilindrada: </b>{{ power }}</p>
         <p><b>Extras: </b>{{ extras }}</p>
+
+        <!-- <div class="flex flex-jc-sb flex-ai-c">
+            <small>Publicado a {{ date }}</small>
+            <button @click="expand(index)" v-on:click="show = !show">
+              <div class="lines"></div>
+              <div class="lines"></div>
+            </button>
+          </div> -->
       </div>
     </div>
   </div>
@@ -90,11 +118,11 @@ export default {
 
       let lines = document.querySelectorAll(`#card${index} .lines`);
 
-      console.log(lines);
-
       lines.forEach(line => {
         line.classList.toggle("minus");
       });
+
+      console.log(index);
     }
   }
 };

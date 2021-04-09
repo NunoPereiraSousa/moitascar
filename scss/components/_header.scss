@@ -1,22 +1,26 @@
 .header {
   width: 100%;
-  padding: 1rem 1.625rem;
-  position: fixed;
-  top: 0;
+  padding: 0rem 1.625rem;
+  // position: fixed;
+  // top: 0%;
+  // left: 0%;
   z-index: 999;
+  position: relative;
+
+  background-color: rgba($color: $white, $alpha: 1);
 
   // box-shadow: 0 3px 10px rgba($color: $white, $alpha: 0.15);
 
   @include breakpoint-up(tablet) {
-    padding: 2rem 2.625rem;
+    padding: 1rem 2.625rem;
   }
 
   @include breakpoint-up(desktop) {
-    padding: 1.5rem 4rem;
+    padding: 0rem 8vw;
   }
 
   img {
-    width: 60px;
+    width: 50px;
   }
 
   &__title {
@@ -39,12 +43,12 @@
 
   &__hamburger {
     width: 1.875rem;
-    height: 1.125rem;
+    height: 1rem;
     position: relative;
 
     &__lines {
       height: 2px;
-      background-color: $white;
+      background-color: $black;
       position: absolute;
       z-index: 999;
       right: 0%;
@@ -151,7 +155,7 @@
 
     &__extra {
       position: absolute;
-      bottom: 0;
+      bottom: 10%;
       width: 100%;
 
       &__socials {
@@ -196,40 +200,36 @@
     width: 100%;
 
     &__links {
-      margin: 0 0 0 2rem;
       cursor: pointer;
 
-      h5 {
-        font-size: $_15px;
-        // margin-right: $_30px;
-        transform: rotate(-90deg);
-        font-weight: 400;
-        color: $green;
-
-        @include breakpoint-down(phone) {
-          margin: 0.75rem $_30px 0.75rem 0;
-        }
-      }
-
       h3 {
-        font-weight: 400;
+        font-weight: 500;
         font-size: $_18px;
+        font-family: $openSans;
 
-        color: $white;
+        color: $black;
 
         border-right: 1px solid rgba($color: $white, $alpha: 0.75);
-        padding: 0 2rem;
-
-        margin: 0;
+        padding: 0 3rem;
 
         &#no_border {
           border-right: none !important;
-          padding-right: 0;
+
+          @include breakpoint-up(desktop) {
+            padding-right: 0;
+          }
         }
 
         @include breakpoint-down(phone) {
           font-size: $_18px;
           margin: 0.75rem 0;
+        }
+
+        @include breakpoint-up(desktop) {
+          margin: 0 2rem;
+          font-size: $_15px;
+          padding: 0;
+          // border-right: 1px solid rgba($color: $black, $alpha: 0.5);
         }
       }
     }

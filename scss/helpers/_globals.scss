@@ -6,7 +6,6 @@
 
 html,
 body {
-  height: 100%;
   width: 100%;
   margin: 0;
   overflow-x: hidden;
@@ -53,6 +52,18 @@ a:focus {
 // hides bellow iPadPro
 .hide-for-mobile {
   @include breakpoint-down(iPadPro) {
+    display: none;
+  }
+}
+
+.hide-for-phone {
+  @include breakpoint-down(tablet) {
+    display: none;
+  }
+}
+
+.show-above-phone {
+  @include breakpoint-up(tablet) {
     display: none;
   }
 }

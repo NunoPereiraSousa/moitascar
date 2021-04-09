@@ -3,13 +3,26 @@
   box-shadow: 0 3px 40px rgba($color: $grey, $alpha: 0.07),
     0 -3px 40px rgba($color: $grey, $alpha: 0.07);
 
+  @include breakpoint-up(desktop) {
+    box-shadow: 0 6px 20px rgba($color: #000, $alpha: 0.3),
+      0 -6px 20px rgba($color: #353535, $alpha: 0.1);
+  }
+
   img {
     height: 12.875rem;
     width: 100%;
+
+    @include breakpoint-up(desktop) {
+      height: 18.375rem;
+    }
   }
 
   &__info {
     padding: 1.25rem 1.5rem;
+
+    @include breakpoint-up(iPadPro) {
+      padding: 1.75rem 2rem;
+    }
   }
 
   p {
@@ -27,11 +40,19 @@
     &:nth-child(2) {
       margin-bottom: 1.25rem;
     }
+
+    @include breakpoint-up(tablet) {
+      font-size: $_17px;
+    }
   }
 
   small {
     color: rgba($color: $white, $alpha: 0.53);
     font-style: italic;
+
+    @include breakpoint-up(tablet) {
+      font-size: $_15px;
+    }
   }
 
   button {
@@ -91,5 +112,125 @@
   .hide {
     font-family: $openSans;
     // margin-top: 3rem;
+  }
+}
+
+.cars__grid__card__large {
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba($color: #000, $alpha: 0.3),
+    0 -6px 20px rgba($color: #353535, $alpha: 0.1);
+
+  // grid-template-columns: repeat(2, 1fr);
+
+  img {
+    height: 12.875rem;
+    width: 100%;
+
+    @include breakpoint-up(desktop) {
+      height: 18.375rem;
+    }
+  }
+
+  &__info {
+    padding: 1.5rem 1.25rem;
+
+    @include breakpoint-up(iPadPro) {
+      padding: 1.75rem 2rem;
+    }
+
+    h3 {
+      text-align: center;
+      margin: 0 0 1.5rem;
+      color: $white;
+    }
+
+    p {
+      color: $white;
+      margin: 0;
+      margin-bottom: 1rem;
+
+      b {
+        font-weight: 600;
+        font-size: $_15px;
+      }
+
+      @include breakpoint-up(tablet) {
+        font-size: $_17px;
+      }
+    }
+
+    i {
+      color: $white;
+      font-size: $_16px;
+      margin-right: 1rem;
+    }
+
+    small {
+      color: rgba($color: $white, $alpha: 0.53);
+      font-style: italic;
+
+      @include breakpoint-up(tablet) {
+        font-size: $_15px;
+      }
+    }
+
+    button {
+      position: relative;
+      background-color: transparent;
+      // border: 1.5px solid $black;
+      border: none;
+      border-radius: 50%;
+      height: 1.625rem;
+      width: 1.625rem;
+
+      &:focus {
+        outline: none;
+      }
+
+      .lines {
+        position: absolute;
+        width: 2px;
+        height: 12px;
+        background-color: $green;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        &:nth-child(1) {
+          transition: all 0.5s ease;
+        }
+
+        &:nth-child(2) {
+          transform: translate(-50%, -50%) rotate(90deg);
+        }
+
+        &.minus {
+          &:nth-child(1) {
+            height: 0;
+          }
+        }
+
+        @include breakpoint-up(iPadPro) {
+          height: 0.75rem;
+        }
+
+        @include breakpoint-up(large) {
+          height: 1rem;
+        }
+      }
+    }
+
+    hr {
+      margin: 3rem auto;
+      background-color: $grey;
+      height: 1px;
+      width: 100%;
+      border: none;
+    }
+
+    .hide {
+      font-family: $openSans;
+      // margin-top: 3rem;
+    }
   }
 }

@@ -5,14 +5,28 @@
   padding: calc(calc(4.325rem / 2) + calc(3.125rem / 8)) 1.25rem 3.125rem;
   margin: 0 2rem 3rem;
 
+  @include breakpoint-up(tablet) {
+    margin: 0 0.5rem 2rem;
+  }
+
   @include breakpoint-up(iPadPro) {
     box-shadow: 0px 2px 14px 0px rgba(0, 0, 0, 0.1);
     padding: calc(calc(4.325rem / 2) + calc(3.125rem / 8)) 2rem 3.125rem;
   }
 
+  @include breakpoint-up(desktop) {
+    margin: 0 2rem 2rem;
+  }
+
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+  }
+
   h3 {
     text-align: center;
-    font-size: $_17px;
+    font-size: $_15px;
     font-weight: 400;
     letter-spacing: 0.2px;
     font-family: $ibm;
@@ -22,6 +36,10 @@
     font-weight: 500;
 
     margin: 1.25rem 0 1rem;
+
+    @include breakpoint-up(desktop) {
+      font-size: $_17px;
+    }
   }
 
   h6 {
@@ -46,6 +64,12 @@
       letter-spacing: 0.3px;
       margin: 0;
       text-align: center;
+      line-height: 1.6;
+
+      @include breakpoint-up(desktop) {
+        font-size: $_17px;
+        margin-bottom: 2rem;
+      }
     }
   }
 }

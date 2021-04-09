@@ -40,19 +40,15 @@
       <img src="../assets/Logo2.png" alt="" />
       <div class="flex">
         <div class="header__desktop__links flex flex-ai-c">
-          <h5>01</h5>
-          <h3>Homepage</h3>
+          <h3>Página inicial</h3>
         </div>
         <div class="header__desktop__links flex flex-ai-c">
-          <h5>02</h5>
           <h3>Carros</h3>
         </div>
         <div class="header__desktop__links flex flex-ai-c">
-          <h5>03</h5>
           <h3>Sobre Nós</h3>
         </div>
         <div class="header__desktop__links flex flex-ai-c">
-          <h5>04</h5>
           <h3 id="no_border">Contactos</h3>
         </div>
       </div>

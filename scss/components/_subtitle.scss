@@ -1,5 +1,6 @@
 .subtitle {
   position: relative;
+  width: fit-content;
 
   margin: 0 0 4rem;
   padding-bottom: 1rem;
@@ -8,16 +9,37 @@
   font-size: $_20px;
   font-family: $ibm;
 
-  text-align: center;
+  // text-align: center;
 
   text-shadow: 2px 2px 4px rgba($color: $dark, $alpha: 0.2);
 
-  @include pseudo(after, $dark, 2px, 32px);
+  @include pseudo(after, $dark, 2px, 40px);
+
+  @include breakpoint-up(tablet) {
+    font-size: $_24px;
+  }
+
+  @include breakpoint-up(iPadPro) {
+    margin: 0 0 6rem;
+    font-size: $_28px;
+
+    @include pseudo(after, $dark, 3px, 40px);
+  }
+
+  @include breakpoint-up(desktop) {
+    text-shadow: 2px 2px 4px rgba($color: $dark, $alpha: 0.1);
+    font-size: $_24px;
+    @include pseudo(after, $dark, 2px, 40px);
+  }
 
   &.light {
     color: $white;
 
     @include pseudo(after, $white, 2px, 32px);
     text-shadow: 2px 2px 4px rgba($color: $white, $alpha: 0.2);
+
+    @include breakpoint-up(desktop) {
+      text-shadow: 2px 2px 4px rgba($color: $dark, $alpha: 0.1);
+    }
   }
 }

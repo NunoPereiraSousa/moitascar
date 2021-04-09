@@ -38,9 +38,8 @@ $breakpoint-down: (
   &::#{$type} {
     content: "";
     position: absolute;
-    left: 50%;
+    left: 0%;
     bottom: 0%;
-    transform: translateX(-50%);
     background-color: #{$backgroundColor};
     height: #{$height};
     width: #{$width};

@@ -12,6 +12,13 @@
       0 -3px 30px rgba($color: $dark, $alpha: 0.04);
   }
 
+  transition: all 0.4s ease;
+
+  &:hover {
+    box-shadow: 0 3px 30px rgba($color: $dark, $alpha: 0.07),
+      0 -3px 30px rgba($color: $dark, $alpha: 0.07);
+  }
+
   h1 {
     position: relative;
     margin: 0;
@@ -22,20 +29,19 @@
 
     padding-bottom: 1rem;
 
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: 0%;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: $purple;
-      height: 2px;
-      width: 40px;
-    }
+    @include pseudo(after, $purple, 2px, 40px);
   }
 
   p {
     margin: 2.5rem 0 0;
     font-family: $openSans;
+
+    @include breakpoint-up(tablet) {
+      font-size: $_17px;
+    }
+
+    @include breakpoint-up(desktop) {
+      font-size: $_16px;
+    }
   }
 }
