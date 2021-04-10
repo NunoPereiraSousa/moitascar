@@ -1,22 +1,17 @@
 .header {
   width: 100%;
   padding: 0rem 1.625rem;
-  // position: fixed;
-  // top: 0%;
-  // left: 0%;
   z-index: 999;
   position: relative;
 
   background-color: rgba($color: $white, $alpha: 1);
-
-  // box-shadow: 0 3px 10px rgba($color: $white, $alpha: 0.15);
 
   @include breakpoint-up(tablet) {
     padding: 1rem 2.625rem;
   }
 
   @include breakpoint-up(desktop) {
-    padding: 0rem 8vw;
+    padding: 0.6rem 8vw;
   }
 
   img {
@@ -58,7 +53,7 @@
 
       &.open {
         background-color: $white;
-        transform-origin: -2.5px center;
+        transform-origin: -1.5px center;
       }
 
       &:nth-child(1) {
@@ -79,7 +74,7 @@
 
       &:nth-child(2) {
         top: 50%;
-        width: 1.875rem;
+        width: 1.5rem;
 
         &.open {
           opacity: 0;
@@ -212,6 +207,10 @@
         border-right: 1px solid rgba($color: $white, $alpha: 0.75);
         padding: 0 3rem;
 
+        &:hover {
+          color: $purple;
+        }
+
         &#no_border {
           border-right: none !important;
 
@@ -225,11 +224,14 @@
           margin: 0.75rem 0;
         }
 
-        @include breakpoint-up(desktop) {
-          margin: 0 2rem;
+        @include breakpoint-up(iPadPro) {
+          margin: 0 1.5rem;
           font-size: $_15px;
           padding: 0;
-          // border-right: 1px solid rgba($color: $black, $alpha: 0.5);
+        }
+
+        @include breakpoint-up(desktop) {
+          margin: 0 2rem;
         }
       }
     }

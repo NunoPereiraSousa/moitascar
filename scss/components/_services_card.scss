@@ -24,12 +24,12 @@
     margin: 0;
 
     font-family: $ibm;
-    font-size: $_20px;
+    font-size: $_19px;
     font-weight: 600;
 
     padding-bottom: 1rem;
 
-    @include pseudo(after, $purple, 2px, 40px);
+    @include pseudo-center(after, $purple, 2px, 30px);
   }
 
   p {

@@ -5,7 +5,7 @@
       <div class="overlay"></div> -->
       <div class="overlay"></div>
       <div class="home__info">
-        <h3>Stand automóvel em Vila Nova de Gaia</h3>
+        <h3>Moitas Cars - Stand automóvel em Vila Nova de Gaia</h3>
 
         <!-- <hr /> -->
 
@@ -71,7 +71,7 @@
     <section class="testimonials">
       <SubTitle title="O que dizem sobre nós" />
       <vue-glide
-        :startAt="1"
+        :startAt="0"
         :gap="40"
         :breakpoints="{
           450: {
@@ -91,9 +91,27 @@
         :bound="true"
         :infinite="false"
       >
-        <vue-glide-slide v-for="i in 4" :key="i">
+        <vue-glide-slide>
+          <TestimonialCard
+            content="Atendimento, Atendimento, Atendimento, Atendimento, simpatia, transparência nos negócios. Atendimento, simpatia, transparência nos negócios."
+            name="Neca Long"
+            date="07/06/2019"
+        /></vue-glide-slide>
+        <vue-glide-slide>
           <TestimonialCard
             content="Atendimento, simpatia, transparência nos negócios."
+            name="Neca Long"
+            date="07/06/2019"
+        /></vue-glide-slide>
+        <vue-glide-slide>
+          <TestimonialCard
+            content="nos negócios. Atendimento, simpatia, transparência nos negócios."
+            name="Neca Long"
+            date="07/06/2019"
+        /></vue-glide-slide>
+        <vue-glide-slide>
+          <TestimonialCard
+            content="Atendimento, Atendimento ,Atendimento, Atendimento, Atendimento, Atendimento, Atendimento, simpatia, transparência nos negócios. Atendimento, simpatia, transparência nos negócios."
             name="Neca Long"
             date="07/06/2019"
         /></vue-glide-slide>

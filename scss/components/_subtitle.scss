@@ -6,14 +6,14 @@
   padding-bottom: 1rem;
 
   font-weight: 600;
-  font-size: $_20px;
+  font-size: $_22px;
   font-family: $ibm;
 
   // text-align: center;
 
   text-shadow: 2px 2px 4px rgba($color: $dark, $alpha: 0.2);
 
-  @include pseudo(after, $dark, 2px, 40px);
+  @include pseudo(after, $dark, 2.5px, 36px);
 
   @include breakpoint-up(tablet) {
     font-size: $_24px;
@@ -27,9 +27,10 @@
   }
 
   @include breakpoint-up(desktop) {
+    padding-bottom: 1.5rem;
     text-shadow: 2px 2px 4px rgba($color: $dark, $alpha: 0.1);
     font-size: $_24px;
-    @include pseudo(after, $dark, 2px, 40px);
+    @include pseudo(after, $dark, 2.5px, 40px);
   }
 
   &.light {

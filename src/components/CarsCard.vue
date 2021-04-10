@@ -36,9 +36,11 @@
         <h3>{{ brand }}, {{ model }}</h3>
         <!-- <p><b>Preço:</b> {{ price }}€</p> -->
         <p><i class="far fa-calendar-alt"></i>{{ month }}, {{ year }}</p>
-        <p><i class="fas fa-road"></i>{{ km }}km</p>
-        <p><b>Cilindrada: </b>{{ power }}</p>
-        <p><b>Extras: </b>{{ extras }}</p>
+        <div class="flex flex-ai-c flex-jc-sb">
+          <p><i class="fas fa-road"></i>{{ km }}km</p>
+          <p><b>Cilindrada: </b>{{ power }}</p>
+        </div>
+        <p id="extra"><b>Extras: </b>{{ extras }}</p>
 
         <!-- <div class="flex flex-jc-sb flex-ai-c">
             <small>Publicado a {{ date }}</small>
@@ -48,6 +50,7 @@
             </button>
           </div> -->
       </div>
+      <button>{{ price }}€</button>
     </div>
   </div>
 </template>

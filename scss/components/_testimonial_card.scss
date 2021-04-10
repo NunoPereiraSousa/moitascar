@@ -5,6 +5,29 @@
   padding: calc(calc(4.325rem / 2) + calc(3.125rem / 8)) 1.25rem 3.125rem;
   margin: 0 2rem 3rem;
 
+  height: 16.875rem;
+  ::-webkit-scrollbar {
+    width: 2px;
+    border-radius: 2px;
+
+    @include breakpoint-up(desktop) {
+      width: 4px;
+    }
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba($color: $black, $alpha: 0.2);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba($color: $black, $alpha: 0.2);
+  }
+
   @include breakpoint-up(tablet) {
     margin: 0 0.5rem 2rem;
   }
@@ -16,6 +39,7 @@
 
   @include breakpoint-up(desktop) {
     margin: 0 2rem 2rem;
+    height: 20.875rem;
   }
 
   cursor: grab;
@@ -39,6 +63,7 @@
 
     @include breakpoint-up(desktop) {
       font-size: $_17px;
+      margin-top: 3rem;
     }
   }
 
@@ -55,10 +80,16 @@
   }
 
   &__text {
-    // position: relative;
-    // z-index: -50;
-    // max-height: 8.75rem;
-    // overflow-y: auto;
+    height: 100px;
+    max-height: 7.75rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    white-space: normal;
+
+    @include breakpoint-up(desktop) {
+      height: 18.75rem;
+      max-height: 9rem;
+    }
 
     p {
       letter-spacing: 0.3px;
@@ -67,8 +98,8 @@
       line-height: 1.6;
 
       @include breakpoint-up(desktop) {
+        text-align: left;
         font-size: $_17px;
-        margin-bottom: 2rem;
       }
     }
   }

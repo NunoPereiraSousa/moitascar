@@ -116,6 +116,8 @@
 }
 
 .cars__grid__card__large {
+  position: relative;
+
   border-radius: 8px;
   box-shadow: 0 6px 20px rgba($color: #000, $alpha: 0.3),
     0 -6px 20px rgba($color: #353535, $alpha: 0.1);
@@ -126,8 +128,12 @@
     height: 12.875rem;
     width: 100%;
 
+    @include breakpoint-up(iPadPro) {
+      height: 16rem;
+    }
+
     @include breakpoint-up(desktop) {
-      height: 18.375rem;
+      height: 16.25rem;
     }
   }
 
@@ -142,6 +148,10 @@
       text-align: center;
       margin: 0 0 1.5rem;
       color: $white;
+
+      @include breakpoint-up(iPadPro) {
+        margin: 0 0 2.5rem;
+      }
     }
 
     p {
@@ -152,6 +162,14 @@
       b {
         font-weight: 600;
         font-size: $_15px;
+      }
+
+      &#extra {
+        margin-bottom: 2rem;
+      }
+
+      &#extra b {
+        color: $green;
       }
 
       @include breakpoint-up(tablet) {
@@ -174,52 +192,6 @@
       }
     }
 
-    button {
-      position: relative;
-      background-color: transparent;
-      // border: 1.5px solid $black;
-      border: none;
-      border-radius: 50%;
-      height: 1.625rem;
-      width: 1.625rem;
-
-      &:focus {
-        outline: none;
-      }
-
-      .lines {
-        position: absolute;
-        width: 2px;
-        height: 12px;
-        background-color: $green;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-        &:nth-child(1) {
-          transition: all 0.5s ease;
-        }
-
-        &:nth-child(2) {
-          transform: translate(-50%, -50%) rotate(90deg);
-        }
-
-        &.minus {
-          &:nth-child(1) {
-            height: 0;
-          }
-        }
-
-        @include breakpoint-up(iPadPro) {
-          height: 0.75rem;
-        }
-
-        @include breakpoint-up(large) {
-          height: 1rem;
-        }
-      }
-    }
-
     hr {
       margin: 3rem auto;
       background-color: $grey;
@@ -231,6 +203,33 @@
     .hide {
       font-family: $openSans;
       // margin-top: 3rem;
+    }
+  }
+
+  button {
+    position: absolute;
+    left: 50%;
+    bottom: calc(0% - (2.875rem));
+    transform: translate(-50%, -50%);
+
+    padding: 0.8rem 2rem;
+
+    background-color: $green;
+    border: none;
+    border-radius: 10px;
+
+    color: $white;
+    font-size: $_18px;
+
+    box-shadow: 0px 3px 20px rgba($color: $green, $alpha: 0.25);
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    @include breakpoint-up(desktop) {
+      box-shadow: 0px 3px 20px rgba($color: $green, $alpha: 0.15);
     }
   }
 }
