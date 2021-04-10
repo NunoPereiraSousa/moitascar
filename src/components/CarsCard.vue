@@ -17,7 +17,7 @@
         <div class="hide" v-if="show">
           <hr />
           <p><b>Ano: </b>{{ month }}, {{ year }}</p>
-          <p><b>Total km: </b>{{ km }}km</p>
+          <p><b>Total km: </b>{{ formatKm(km) }}</p>
           <p><b>Cilindrada: </b>{{ power }}</p>
           <p><b>Extras: </b>{{ extras }}</p>
         </div>
@@ -25,30 +25,15 @@
     </div>
     <div class="cars__grid__card__large grid hide-for-phone">
       <img :src="url" alt="carro" />
-      <!-- <div>
-        <div class="flex flex-ai-c flex-jc-sb links__overlay">
-          <i class="fab fa-facebook-square"></i>
-          <a href="">Stand Imovirtual</a>
-        </div>
-      </div> -->
 
       <div class="cars__grid__card__large__info">
         <h3>{{ brand }}, {{ model }}</h3>
-        <!-- <p><b>Preço:</b> {{ price }}€</p> -->
         <div class="flex flex-ai-c flex-jc-sb">
-          <p><i class="fas fa-road"></i>{{ km }}km</p>
+          <p><i class="fas fa-road"></i>{{ formatKm(km) }}</p>
           <p><i class="fas fa-cogs"></i>{{ power }}cm<sup> 3</sup></p>
         </div>
         <p><i class="far fa-calendar-alt"></i>{{ month }}, {{ year }}</p>
         <p id="extra"><b>Extras: </b>{{ extras }}</p>
-
-        <!-- <div class="flex flex-jc-sb flex-ai-c">
-            <small>Publicado a {{ date }}</small>
-            <button @click="expand(index)" v-on:click="show = !show">
-              <div class="lines"></div>
-              <div class="lines"></div>
-            </button>
-          </div> -->
       </div>
       <button>{{ formatCurrency(price) }}</button>
     </div>
@@ -129,6 +114,9 @@ export default {
     },
     formatCurrency(n) {
       return `${n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")} €`;
+    },
+    formatKm(n) {
+      return `${n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")} km`;
     }
   }
 };

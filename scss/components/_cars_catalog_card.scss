@@ -1,0 +1,172 @@
+.cars_catalog__grid__card {
+  //   row-gap: 2rem;
+  box-shadow: 0 3px 40px rgba($color: $grey, $alpha: 0.07),
+    0 -3px 40px rgba($color: $grey, $alpha: 0.07);
+
+  @include breakpoint-up(tablet) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include breakpoint-up(desktop) {
+    padding: 2rem 0 0;
+    width: 80%;
+    box-shadow: none;
+
+    border-top: 1px solid rgba($color: $grey, $alpha: 0.3);
+  }
+
+  img {
+    height: 12.875rem;
+    width: 100%;
+
+    @include breakpoint-up(tablet) {
+      height: 15.35rem;
+    }
+
+    @include breakpoint-up(iPadPro) {
+      height: 18.5rem;
+    }
+
+    @include breakpoint-up(desktop) {
+      height: auto;
+    }
+
+    @include breakpoint-up(large) {
+      height: 25rem;
+    }
+  }
+
+  &__info {
+    padding: 1.25rem 1rem;
+
+    @include breakpoint-up(tablet) {
+      padding: 0 0 0 1.5rem;
+      width: fit-content;
+
+      align-self: center;
+      justify-self: center;
+    }
+
+    @include breakpoint-up(iPadPro) {
+      padding: 1.75rem 2rem;
+    }
+
+    @include breakpoint-up(desktop) {
+      align-self: flex-start;
+      justify-self: start;
+    }
+
+    @include breakpoint-up(large) {
+      align-self: center;
+      justify-self: center;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: $_22px;
+
+      &:last-child {
+        color: $green;
+        font-weight: 400;
+
+        text-shadow: 2px 2px 4px rgba($color: $green, $alpha: 0.075);
+      }
+
+      @include breakpoint-up(large) {
+        font-size: $_24px;
+      }
+    }
+
+    p,
+    a {
+      color: $black;
+      margin: 0;
+      margin-bottom: 1rem;
+
+      font-size: $_15px;
+
+      b {
+        font-weight: 600;
+        font-size: $_15px;
+
+        @include breakpoint-up(large) {
+          margin-bottom: 1.25rem;
+          font-size: $_19px;
+        }
+      }
+
+      &#extra {
+        line-height: 1.6;
+      }
+
+      &#extra b {
+        color: $green;
+      }
+
+      @include breakpoint-up(tablet) {
+        font-size: $_17px;
+      }
+
+      @include breakpoint-up(desktop) {
+        font-size: $_16px;
+      }
+
+      @include breakpoint-up(large) {
+        margin-bottom: 1.25rem;
+        font-size: $_19px;
+      }
+
+      i {
+        color: $black;
+        font-size: $_15px;
+        margin-right: 0.45rem;
+      }
+    }
+
+    &__details {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(2, min-content);
+      column-gap: 1rem;
+      row-gap: 1rem;
+      margin-bottom: 1rem;
+
+      @include breakpoint-up(tablet) {
+        column-gap: 2rem;
+      }
+
+      @include breakpoint-up(desktop) {
+        margin-bottom: 2rem;
+        column-gap: 0;
+        row-gap: 0;
+      }
+
+      h4 {
+        color: rgba($color: $black, $alpha: 0.5);
+        font-weight: 400;
+
+        margin-bottom: 0.4rem;
+        font-family: $ibm;
+
+        @include breakpoint-up(large) {
+          font-size: $_17px;
+        }
+      }
+
+      p,
+      a {
+        margin: 0;
+
+        font-family: $openSans;
+      }
+
+      p:nth-child(2),
+      a:nth-child(4) {
+        justify-self: end;
+
+        @include breakpoint-up(tablet) {
+          justify-self: normal;
+        }
+      }
+    }
+  }
+}
