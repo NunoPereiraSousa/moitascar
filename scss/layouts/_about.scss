@@ -1,0 +1,47 @@
+.about {
+  padding: 0;
+
+  &__info {
+    @include breakpoint-up(desktop) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    img {
+      width: 100%;
+
+      @include breakpoint-up(iPadPro) {
+        order: 2;
+      }
+
+      @include breakpoint-up(desktop) {
+        order: 1;
+      }
+    }
+
+    p {
+      margin: 0;
+      padding: 2rem;
+
+      line-height: 1.7;
+
+      b {
+        color: $purple;
+      }
+
+      @include breakpoint-up(tablet) {
+        padding: 3rem 4rem;
+        font-size: $_17px;
+        line-height: 1.8;
+      }
+
+      @include breakpoint-up(iPadPro) {
+        order: 1;
+        font-size: $_20px;
+      }
+
+      @include breakpoint-up(desktop) {
+        order: 2;
+      }
+    }
+  }
+}

@@ -1,6 +1,8 @@
 <template>
   <nav class="header flex flex-jc-sb flex-ai-c">
-    <img class=" hide-for-desktop" src="../assets/Logo2.png" alt="" />
+    <router-link :to="{ name: 'Home' }">
+      <img class="hide-for-desktop" src="../assets/Logo2.png" alt="" />
+    </router-link>
     <div class="header__hamburger hide-for-desktop" @click="toggleNavbar">
       <div class="header__hamburger__lines"></div>
       <div class="header__hamburger__lines"></div>
@@ -10,15 +12,21 @@
       <div class="header__mobile__menu__links">
         <div class="header__mobile__menu__links__topics flex flex-ai-c">
           <h5>01</h5>
-          <h3>Homepage</h3>
+          <router-link :to="{ name: 'Cars' }">
+            <h3>Página inicial</h3>
+          </router-link>
         </div>
         <div class="header__mobile__menu__links__topics flex flex-ai-c">
           <h5>02</h5>
-          <h3>Carros</h3>
+          <router-link :to="{ name: 'Cars' }">
+            <h3>Carros</h3>
+          </router-link>
         </div>
         <div class="header__mobile__menu__links__topics flex flex-ai-c">
           <h5>03</h5>
-          <h3>Sobre Nós</h3>
+          <router-link :to="{ name: 'About' }">
+            <h3>Sobre nós</h3>
+          </router-link>
         </div>
         <div class="header__mobile__menu__links__topics flex flex-ai-c">
           <h5>04</h5>
@@ -37,16 +45,24 @@
       </div>
     </div>
     <div class="header__desktop hide-for-mobile flex flex-ai-c flex-jc-sb">
-      <img src="../assets/Logo2.png" alt="" />
+      <router-link :to="{ name: 'Home' }">
+        <img src="../assets/Logo2.png" alt="" />
+      </router-link>
       <div class="flex">
         <div class="header__desktop__links flex flex-ai-c">
-          <h3>Página inicial</h3>
+          <router-link :to="{ name: 'Home' }">
+            <h3>Página inicial</h3>
+          </router-link>
         </div>
         <div class="header__desktop__links flex flex-ai-c">
-          <h3>Carros</h3>
+          <router-link :to="{ name: 'Cars' }">
+            <h3>Carros</h3>
+          </router-link>
         </div>
         <div class="header__desktop__links flex flex-ai-c">
-          <h3>Sobre Nós</h3>
+          <router-link :to="{ name: 'About' }">
+            <h3>Sobre nós</h3>
+          </router-link>
         </div>
         <div class="header__desktop__links flex flex-ai-c">
           <h3 id="no_border">Contactos</h3>

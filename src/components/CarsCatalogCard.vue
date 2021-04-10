@@ -9,10 +9,12 @@
       <div
         class="cars_catalog__grid__card__info__details grid hide-for-desktop"
       >
-        <p><i class="fas fa-road"></i>{{ km }}km</p>
+        <p><i class="fas fa-road"></i>{{ formatKm(km) }}</p>
         <p><i class="fas fa-cogs"></i>{{ power }}cm<sup> 3</sup></p>
         <p><i class="far fa-calendar-alt"></i>{{ month }}, {{ year }}</p>
-        <a><i class="fab fa-facebook-square"></i>facebook</a>
+        <a href="https://www.facebook.com/Moitas2018/" target="_blank"
+          ><i class="fab fa-facebook-square"></i>facebook</a
+        >
       </div>
       <div class="cars_catalog__grid__card__info__details grid hide-for-phone">
         <div>

@@ -52,7 +52,8 @@
     }
 
     @include breakpoint-up(desktop) {
-      align-self: flex-start;
+      padding: 0 2rem;
+      align-self: center;
       justify-self: start;
     }
 
@@ -63,7 +64,8 @@
 
     h2 {
       margin-top: 0;
-      font-size: $_22px;
+      font-size: $_17px;
+      margin-bottom: 2rem;
 
       &:last-child {
         color: $green;
@@ -73,7 +75,7 @@
       }
 
       @include breakpoint-up(large) {
-        font-size: $_24px;
+        font-size: $_22px;
       }
     }
 
@@ -109,6 +111,7 @@
 
       @include breakpoint-up(desktop) {
         font-size: $_16px;
+        margin-bottom: 0;
       }
 
       @include breakpoint-up(large) {
@@ -135,7 +138,7 @@
       }
 
       @include breakpoint-up(desktop) {
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
         column-gap: 0;
         row-gap: 0;
       }

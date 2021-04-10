@@ -128,6 +128,8 @@ canvas {
   z-index: 999;
   position: relative;
   background-color: #fefefe;
+  -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+          box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 @media (min-width: 48em) {
@@ -138,12 +140,18 @@ canvas {
 
 @media (min-width: 75em) {
   .header {
-    padding: 0.6rem 8vw;
+    padding: 0.3rem 8vw;
   }
 }
 
 .header img {
   width: 50px;
+}
+
+@media (min-width: 75em) {
+  .header img {
+    width: 60px;
+  }
 }
 
 .header__title {
@@ -283,6 +291,7 @@ canvas {
 .header__mobile__menu__links__topics h3 {
   font-weight: 500;
   font-size: 1.25rem;
+  color: #fefefe;
 }
 
 @media (max-width: 23.375em) {
@@ -1378,6 +1387,25 @@ footer small {
   font-size: 1rem;
 }
 
+.cars__button:hover {
+  background-color: #fefefe;
+  color: #000000;
+  border: 1px solid #fefefe;
+}
+
+@media (min-width: 48em) {
+  .cars__button {
+    margin: 6rem auto 0;
+  }
+}
+
+@media (min-width: 64em) {
+  .cars__button {
+    margin: 8rem auto 0;
+    font-weight: 500;
+  }
+}
+
 .testimonials {
   padding: 6rem 0;
   position: relative;
@@ -1885,6 +1913,61 @@ footer small {
   }
 }
 
+.cars_catalog__buttons {
+  position: fixed;
+  right: 5%;
+  bottom: 10%;
+}
+
+@media (min-width: 75em) {
+  .cars_catalog__buttons {
+    right: 4%;
+  }
+}
+
+.cars_catalog__buttons a {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: #d8d8d8;
+  color: #000000;
+  -webkit-box-shadow: 0px 3px 10px rgba(97, 97, 97, 0.15), 0px -3px 10px rgba(97, 97, 97, 0.15);
+          box-shadow: 0px 3px 10px rgba(97, 97, 97, 0.15), 0px -3px 10px rgba(97, 97, 97, 0.15);
+}
+
+@media (min-width: 48em) {
+  .cars_catalog__buttons a {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (min-width: 75em) {
+  .cars_catalog__buttons a {
+    -webkit-box-shadow: 0px 3px 10px rgba(97, 97, 97, 0.075), 0px -3px 10px rgba(97, 97, 97, 0.075);
+            box-shadow: 0px 3px 10px rgba(97, 97, 97, 0.075), 0px -3px 10px rgba(97, 97, 97, 0.075);
+    background-color: rgba(216, 216, 216, 0.5);
+  }
+}
+
+@media (min-width: 120em) {
+  .cars_catalog__buttons a {
+    width: 60px;
+    height: 60px;
+    font-size: 1.0625rem;
+  }
+}
+
+.cars_catalog__buttons a:first-child {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 48em) {
+  .cars_catalog__buttons a:first-child {
+    margin-bottom: 2rem;
+  }
+}
+
 .cars_catalog__grid__card {
   -webkit-box-shadow: 0 3px 40px rgba(97, 97, 97, 0.07), 0 -3px 40px rgba(97, 97, 97, 0.07);
           box-shadow: 0 3px 40px rgba(97, 97, 97, 0.07), 0 -3px 40px rgba(97, 97, 97, 0.07);
@@ -1962,8 +2045,10 @@ footer small {
 
 @media (min-width: 75em) {
   .cars_catalog__grid__card__info {
-    -ms-flex-item-align: start;
-        align-self: flex-start;
+    padding: 0 2rem;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
     -ms-grid-column-align: start;
         justify-self: start;
   }
@@ -1981,7 +2066,8 @@ footer small {
 
 .cars_catalog__grid__card__info h2 {
   margin-top: 0;
-  font-size: 1.375rem;
+  font-size: 1.0625rem;
+  margin-bottom: 2rem;
 }
 
 .cars_catalog__grid__card__info h2:last-child {
@@ -1992,7 +2078,7 @@ footer small {
 
 @media (min-width: 120em) {
   .cars_catalog__grid__card__info h2 {
-    font-size: 1.5rem;
+    font-size: 1.375rem;
   }
 }
 
@@ -2039,6 +2125,7 @@ footer small {
   .cars_catalog__grid__card__info p,
   .cars_catalog__grid__card__info a {
     font-size: 1rem;
+    margin-bottom: 0;
   }
 }
 
@@ -2078,7 +2165,7 @@ footer small {
 
 @media (min-width: 75em) {
   .cars_catalog__grid__card__info__details {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     -webkit-column-gap: 0;
             column-gap: 0;
     row-gap: 0;
@@ -2115,6 +2202,72 @@ footer small {
   .cars_catalog__grid__card__info__details a:nth-child(4) {
     -ms-grid-column-align: normal;
         justify-self: normal;
+  }
+}
+
+.about {
+  padding: 0;
+}
+
+@media (min-width: 75em) {
+  .about__info {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+.about__info img {
+  width: 100%;
+}
+
+@media (min-width: 64em) {
+  .about__info img {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+}
+
+@media (min-width: 75em) {
+  .about__info img {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+}
+
+.about__info p {
+  margin: 0;
+  padding: 2rem;
+  line-height: 1.7;
+}
+
+.about__info p b {
+  color: #432cb2;
+}
+
+@media (min-width: 48em) {
+  .about__info p {
+    padding: 3rem 4rem;
+    font-size: 1.0625rem;
+    line-height: 1.8;
+  }
+}
+
+@media (min-width: 64em) {
+  .about__info p {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 75em) {
+  .about__info p {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
   }
 }
 /*# sourceMappingURL=style.css.map */
