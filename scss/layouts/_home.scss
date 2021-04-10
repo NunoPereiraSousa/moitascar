@@ -156,7 +156,7 @@
   }
 
   @include breakpoint-up(large) {
-    padding: 10rem 12rem;
+    padding: 10rem 10vw;
   }
 
   &__grid {
@@ -184,7 +184,7 @@
     }
 
     @include breakpoint-up(large) {
-      column-gap: 2rem;
+      column-gap: 4vw;
     }
   }
 }
@@ -231,7 +231,7 @@
     }
 
     @include breakpoint-up(large) {
-      column-gap: 2rem;
+      column-gap: 4rem;
     }
   }
 
@@ -251,6 +251,23 @@
       justify-content: center;
       column-gap: 4rem;
     }
+
+    @include breakpoint-up(large) {
+      column-gap: 6rem;
+    }
+  }
+
+  &__button {
+    margin: 3rem auto 0;
+    padding: 1rem 2.25rem;
+    width: fit-content;
+
+    background-color: transparent;
+    border: 1px solid $white;
+    border-radius: 2px;
+    color: $white;
+    font-family: $ibm;
+    font-size: $_16px;
   }
 }
 
@@ -372,6 +389,10 @@
 
     @include breakpoint-up(iPadPro) {
       height: 40vh;
+    }
+
+    @include breakpoint-up(desktop) {
+      height: 60vh;
     }
   }
 }

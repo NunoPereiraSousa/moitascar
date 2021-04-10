@@ -2,10 +2,11 @@
   box-shadow: 0 6px 30px 0 rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   border-top: 3px solid $purple;
-  padding: calc(calc(4.325rem / 2) + calc(3.125rem / 8)) 1.25rem 3.125rem;
+  padding: 2.125rem 2rem;
   margin: 0 2rem 3rem;
 
-  height: 16.875rem;
+  height: 14.25rem;
+
   ::-webkit-scrollbar {
     width: 2px;
     border-radius: 2px;
@@ -38,8 +39,13 @@
   }
 
   @include breakpoint-up(desktop) {
-    margin: 0 2rem 2rem;
-    height: 20.875rem;
+    height: 16rem;
+    padding: 0 2rem 2rem;
+  }
+
+  @include breakpoint-up(large) {
+    padding: 0 2rem;
+    height: 16.875rem;
   }
 
   cursor: grab;
@@ -50,7 +56,7 @@
 
   h3 {
     text-align: center;
-    font-size: $_15px;
+    font-size: $_16px;
     font-weight: 400;
     letter-spacing: 0.2px;
     font-family: $ibm;
@@ -59,7 +65,7 @@
 
     font-weight: 500;
 
-    margin: 1.25rem 0 1rem;
+    margin: 0 0 1rem;
 
     @include breakpoint-up(desktop) {
       font-size: $_17px;
@@ -76,29 +82,24 @@
     font-style: italic;
     color: rgba($color: $dark, $alpha: 0.53);
 
-    margin: 0;
+    margin: 0 0 2rem;
   }
 
   &__text {
-    height: 100px;
-    max-height: 7.75rem;
+    max-height: 10.75rem;
     overflow-y: auto;
     overflow-x: hidden;
     white-space: normal;
 
-    @include breakpoint-up(desktop) {
-      height: 18.75rem;
-      max-height: 9rem;
-    }
-
     p {
       letter-spacing: 0.3px;
       margin: 0;
-      text-align: center;
+      text-align: left;
       line-height: 1.6;
+      font-size: $_15px;
+      padding-right: 10px;
 
       @include breakpoint-up(desktop) {
-        text-align: left;
         font-size: $_17px;
       }
     }

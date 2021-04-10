@@ -122,6 +122,11 @@
   box-shadow: 0 6px 20px rgba($color: #000, $alpha: 0.3),
     0 -6px 20px rgba($color: #353535, $alpha: 0.1);
 
+  @include breakpoint-up(large) {
+    box-shadow: 0 6px 26px rgba($color: #000, $alpha: 0.4),
+      0 -6px 20px rgba($color: #353535, $alpha: 0.2);
+  }
+
   // grid-template-columns: repeat(2, 1fr);
 
   img {
@@ -134,6 +139,10 @@
 
     @include breakpoint-up(desktop) {
       height: 16.25rem;
+    }
+
+    @include breakpoint-up(large) {
+      height: 18.3rem;
     }
   }
 
@@ -152,6 +161,11 @@
       @include breakpoint-up(iPadPro) {
         margin: 0 0 2.5rem;
       }
+
+      @include breakpoint-up(desktop) {
+        text-align: left;
+        font-weight: 500;
+      }
     }
 
     p {
@@ -166,6 +180,7 @@
 
       &#extra {
         margin-bottom: 2rem;
+        line-height: 1.6;
       }
 
       &#extra b {
@@ -174,6 +189,14 @@
 
       @include breakpoint-up(tablet) {
         font-size: $_17px;
+      }
+
+      @include breakpoint-up(desktop) {
+        font-size: $_16px;
+      }
+
+      @include breakpoint-up(large) {
+        margin-bottom: 1.25rem;
       }
     }
 
@@ -222,13 +245,13 @@
     font-size: $_18px;
 
     box-shadow: 0px 3px 20px rgba($color: $green, $alpha: 0.25);
-    cursor: pointer;
 
     &:focus {
       outline: none;
     }
 
     @include breakpoint-up(desktop) {
+      font-size: $_16px;
       box-shadow: 0px 3px 20px rgba($color: $green, $alpha: 0.15);
     }
   }

@@ -64,9 +64,12 @@
           :year="2018"
           :km="15236"
           :power="123"
-          extras="Colunas JBL, nitro e acentos estufados."
+          extras="Colunas JBL, nitro e acentos estufados  nitro e acentos estufados."
         />
       </div>
+      <router-link class="cars__button flex flex-jc-c" :to="{ name: 'Cars' }"
+        >Ver mais carros
+      </router-link>
     </section>
     <section class="testimonials">
       <SubTitle title="O que dizem sobre nós" />
@@ -93,25 +96,31 @@
       >
         <vue-glide-slide>
           <TestimonialCard
-            content="Atendimento, Atendimento, Atendimento, Atendimento, simpatia, transparência nos negócios. Atendimento, simpatia, transparência nos negócios."
+            content="Honestidade e qualidade de serviço aliado a preços e condições muito competitivos."
+            name="Neca Long"
+            date="07/06/2019"
+        /></vue-glide-slide>
+        <vue-glide-slide>
+          <TestimonialCard
+            content="Atendimento personalizado e boa avaliação do valor do veículo antigo. Facilidade na burocracia. Um ano de garantia. Recomendo."
+            name="Neca Long"
+            date="07/06/2019"
+        /></vue-glide-slide>
+        <vue-glide-slide>
+          <TestimonialCard
+            content="Simpatia, confiança e prontidão na solução. Obrigada"
+            name="Neca Long"
+            date="07/06/2019"
+        /></vue-glide-slide>
+        <vue-glide-slide>
+          <TestimonialCard
+            content="Excelente atendimento e prestação de serviços 👌"
             name="Neca Long"
             date="07/06/2019"
         /></vue-glide-slide>
         <vue-glide-slide>
           <TestimonialCard
             content="Atendimento, simpatia, transparência nos negócios."
-            name="Neca Long"
-            date="07/06/2019"
-        /></vue-glide-slide>
-        <vue-glide-slide>
-          <TestimonialCard
-            content="nos negócios. Atendimento, simpatia, transparência nos negócios."
-            name="Neca Long"
-            date="07/06/2019"
-        /></vue-glide-slide>
-        <vue-glide-slide>
-          <TestimonialCard
-            content="Atendimento, Atendimento ,Atendimento, Atendimento, Atendimento, Atendimento, Atendimento, simpatia, transparência nos negócios. Atendimento, simpatia, transparência nos negócios."
             name="Neca Long"
             date="07/06/2019"
         /></vue-glide-slide>

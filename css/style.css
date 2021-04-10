@@ -546,6 +546,12 @@ footer small {
   }
 }
 
+@media (min-width: 120em) {
+  .services__grid__card {
+    padding: 4rem 2rem;
+  }
+}
+
 .services__grid__card:hover {
   -webkit-box-shadow: 0 3px 30px rgba(12, 24, 32, 0.07), 0 -3px 30px rgba(12, 24, 32, 0.07);
           box-shadow: 0 3px 30px rgba(12, 24, 32, 0.07), 0 -3px 30px rgba(12, 24, 32, 0.07);
@@ -574,6 +580,25 @@ footer small {
           box-shadow: 2px 2px 4px rgba(12, 24, 32, 0.2);
 }
 
+@media (min-width: 120em) {
+  .services__grid__card h1 {
+    font-size: 1.375rem;
+  }
+  .services__grid__card h1::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    background-color: #432cb2;
+    height: 2.5px;
+    width: 30px;
+    -webkit-box-shadow: 2px 2px 4px rgba(12, 24, 32, 0.2);
+            box-shadow: 2px 2px 4px rgba(12, 24, 32, 0.2);
+  }
+}
+
 .services__grid__card p {
   margin: 2.5rem 0 0;
   font-family: "Open Sans";
@@ -588,6 +613,12 @@ footer small {
 @media (min-width: 75em) {
   .services__grid__card p {
     font-size: 1rem;
+  }
+}
+
+@media (min-width: 120em) {
+  .services__grid__card p {
+    font-size: 1.125rem;
   }
 }
 
@@ -728,6 +759,13 @@ footer small {
           box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), 0 -6px 20px rgba(53, 53, 53, 0.1);
 }
 
+@media (min-width: 120em) {
+  .cars__grid__card__large {
+    -webkit-box-shadow: 0 6px 26px rgba(0, 0, 0, 0.4), 0 -6px 20px rgba(53, 53, 53, 0.2);
+            box-shadow: 0 6px 26px rgba(0, 0, 0, 0.4), 0 -6px 20px rgba(53, 53, 53, 0.2);
+  }
+}
+
 .cars__grid__card__large img {
   height: 12.875rem;
   width: 100%;
@@ -742,6 +780,12 @@ footer small {
 @media (min-width: 75em) {
   .cars__grid__card__large img {
     height: 16.25rem;
+  }
+}
+
+@media (min-width: 120em) {
+  .cars__grid__card__large img {
+    height: 18.3rem;
   }
 }
 
@@ -767,6 +811,13 @@ footer small {
   }
 }
 
+@media (min-width: 75em) {
+  .cars__grid__card__large__info h3 {
+    text-align: left;
+    font-weight: 500;
+  }
+}
+
 .cars__grid__card__large__info p {
   color: #fefefe;
   margin: 0;
@@ -780,6 +831,7 @@ footer small {
 
 .cars__grid__card__large__info p#extra {
   margin-bottom: 2rem;
+  line-height: 1.6;
 }
 
 .cars__grid__card__large__info p#extra b {
@@ -789,6 +841,18 @@ footer small {
 @media (min-width: 48em) {
   .cars__grid__card__large__info p {
     font-size: 1.0625rem;
+  }
+}
+
+@media (min-width: 75em) {
+  .cars__grid__card__large__info p {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 120em) {
+  .cars__grid__card__large__info p {
+    margin-bottom: 1.25rem;
   }
 }
 
@@ -835,7 +899,6 @@ footer small {
   font-size: 1.125rem;
   -webkit-box-shadow: 0px 3px 20px rgba(44, 178, 141, 0.25);
           box-shadow: 0px 3px 20px rgba(44, 178, 141, 0.25);
-  cursor: pointer;
 }
 
 .cars__grid__card__large button:focus {
@@ -844,6 +907,7 @@ footer small {
 
 @media (min-width: 75em) {
   .cars__grid__card__large button {
+    font-size: 1rem;
     -webkit-box-shadow: 0px 3px 20px rgba(44, 178, 141, 0.15);
             box-shadow: 0px 3px 20px rgba(44, 178, 141, 0.15);
   }
@@ -854,9 +918,9 @@ footer small {
           box-shadow: 0 6px 30px 0 rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   border-top: 3px solid #432cb2;
-  padding: calc(calc(4.325rem / 2) + calc(3.125rem / 8)) 1.25rem 3.125rem;
+  padding: 2.125rem 2rem;
   margin: 0 2rem 3rem;
-  height: 16.875rem;
+  height: 14.25rem;
   cursor: -webkit-grab;
   cursor: grab;
 }
@@ -901,8 +965,15 @@ footer small {
 
 @media (min-width: 75em) {
   .testimonials__card {
-    margin: 0 2rem 2rem;
-    height: 20.875rem;
+    height: 16rem;
+    padding: 0 2rem 2rem;
+  }
+}
+
+@media (min-width: 120em) {
+  .testimonials__card {
+    padding: 0 2rem;
+    height: 16.875rem;
   }
 }
 
@@ -913,14 +984,14 @@ footer small {
 
 .testimonials__card h3 {
   text-align: center;
-  font-size: 0.9375rem;
+  font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0.2px;
   font-family: "IBM Plex Sans";
   color: #2cb28d;
   font-style: italic;
   font-weight: 500;
-  margin: 1.25rem 0 1rem;
+  margin: 0 0 1rem;
 }
 
 @media (min-width: 75em) {
@@ -937,34 +1008,27 @@ footer small {
   font-family: "Open Sans";
   font-style: italic;
   color: rgba(12, 24, 32, 0.53);
-  margin: 0;
+  margin: 0 0 2rem;
 }
 
 .testimonials__card__text {
-  height: 100px;
-  max-height: 7.75rem;
+  max-height: 10.75rem;
   overflow-y: auto;
   overflow-x: hidden;
   white-space: normal;
 }
 
-@media (min-width: 75em) {
-  .testimonials__card__text {
-    height: 18.75rem;
-    max-height: 9rem;
-  }
-}
-
 .testimonials__card__text p {
   letter-spacing: 0.3px;
   margin: 0;
-  text-align: center;
+  text-align: left;
   line-height: 1.6;
+  font-size: 0.9375rem;
+  padding-right: 10px;
 }
 
 @media (min-width: 75em) {
   .testimonials__card__text p {
-    text-align: left;
     font-size: 1.0625rem;
   }
 }
@@ -1147,7 +1211,7 @@ footer small {
 
 @media (min-width: 120em) {
   .services {
-    padding: 10rem 12rem;
+    padding: 10rem 10vw;
   }
 }
 
@@ -1189,8 +1253,8 @@ footer small {
 
 @media (min-width: 120em) {
   .services__grid {
-    -webkit-column-gap: 2rem;
-            column-gap: 2rem;
+    -webkit-column-gap: 4vw;
+            column-gap: 4vw;
   }
 }
 
@@ -1258,8 +1322,8 @@ footer small {
 
 @media (min-width: 120em) {
   .cars__grid {
-    -webkit-column-gap: 2rem;
-            column-gap: 2rem;
+    -webkit-column-gap: 4rem;
+            column-gap: 4rem;
   }
 }
 
@@ -1291,6 +1355,27 @@ footer small {
     -webkit-column-gap: 4rem;
             column-gap: 4rem;
   }
+}
+
+@media (min-width: 120em) {
+  .cars__grid__large {
+    -webkit-column-gap: 6rem;
+            column-gap: 6rem;
+  }
+}
+
+.cars__button {
+  margin: 3rem auto 0;
+  padding: 1rem 2.25rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: transparent;
+  border: 1px solid #fefefe;
+  border-radius: 2px;
+  color: #fefefe;
+  font-family: "IBM Plex Sans";
+  font-size: 1rem;
 }
 
 .testimonials {
@@ -1442,6 +1527,12 @@ footer small {
 @media (min-width: 64em) {
   .map #map {
     height: 40vh;
+  }
+}
+
+@media (min-width: 75em) {
+  .map #map {
+    height: 60vh;
   }
 }
 

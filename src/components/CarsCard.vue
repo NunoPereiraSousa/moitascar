@@ -3,7 +3,7 @@
     <div class="cars__grid__card show-above-phone" :id="card_id">
       <img :src="url" alt="carro" />
       <div class="cars__grid__card__info">
-        <p><b>Preço:</b> {{ price }}€</p>
+        <p><b>Preço:</b> {{ formatCurrency(price) }}</p>
         <p><b>Marca & modelo:</b> {{ brand }}, {{ model }}</p>
 
         <div class="flex flex-jc-sb flex-ai-c">
@@ -35,11 +35,11 @@
       <div class="cars__grid__card__large__info">
         <h3>{{ brand }}, {{ model }}</h3>
         <!-- <p><b>Preço:</b> {{ price }}€</p> -->
-        <p><i class="far fa-calendar-alt"></i>{{ month }}, {{ year }}</p>
         <div class="flex flex-ai-c flex-jc-sb">
           <p><i class="fas fa-road"></i>{{ km }}km</p>
-          <p><b>Cilindrada: </b>{{ power }}</p>
+          <p><i class="fas fa-cogs"></i>{{ power }}cm<sup> 3</sup></p>
         </div>
+        <p><i class="far fa-calendar-alt"></i>{{ month }}, {{ year }}</p>
         <p id="extra"><b>Extras: </b>{{ extras }}</p>
 
         <!-- <div class="flex flex-jc-sb flex-ai-c">
@@ -50,7 +50,7 @@
             </button>
           </div> -->
       </div>
-      <button>{{ price }}€</button>
+      <button>{{ formatCurrency(price) }}</button>
     </div>
   </div>
 </template>
@@ -126,6 +126,9 @@ export default {
       });
 
       console.log(index);
+    },
+    formatCurrency(n) {
+      return `${n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")} €`;
     }
   }
 };
