@@ -1,0 +1,28 @@
+.about__reasons__grid__card {
+  box-shadow: 3px 3px 40px rgba($color: $grey, $alpha: 0.2);
+  border-radius: 16px;
+
+  padding: 1rem;
+
+  @include breakpoint-up(iPadPro) {
+    box-shadow: 5px 5px 20px rgba($color: $grey, $alpha: 0.075),
+      -5px -5px 20px rgba($color: $grey, $alpha: 0.075);
+  }
+
+  img {
+    width: 60px;
+
+    margin: 1rem 0 2rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+    font-weight: 500;
+
+    color: $white;
+  }
+
+  p {
+    color: rgba($color: $white, $alpha: 0.53);
+  }
+}

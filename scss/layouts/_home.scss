@@ -6,7 +6,7 @@
   background-color: rgba(0, 0, 0, 0.55);
 
   @include breakpoint-up(desktop) {
-    height: 70vh;
+    height: 60vh;
   }
 }
 
@@ -22,8 +22,8 @@
   background-image: url("../assets/background.jpg");
 
   @include breakpoint-up(desktop) {
-    background-position: 50% 90%;
-    height: 70vh;
+    background-position: 50% 85%;
+    height: 60vh;
   }
 
   &__info {

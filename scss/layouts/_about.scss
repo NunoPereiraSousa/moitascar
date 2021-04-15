@@ -44,4 +44,53 @@
       }
     }
   }
+
+  &__reasons {
+    padding: 4rem 2rem;
+    background-color: $dark;
+
+    text-align: center;
+
+    @include breakpoint-up(tablet) {
+      padding: 6rem 4rem;
+    }
+
+    @include breakpoint-up(iPadPro) {
+      padding: 8rem 6rem;
+    }
+
+    @include breakpoint-up(desktop) {
+      padding: 6rem 8vw 6rem;
+    }
+
+    @include breakpoint-up(large) {
+      padding: 10rem 10vw;
+    }
+
+    &__grid {
+      row-gap: 3rem;
+
+      @include breakpoint-up(tablet) {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 3rem;
+        column-gap: 3rem;
+      }
+
+      @include breakpoint-up(iPadPro) {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 4rem;
+        column-gap: 4rem;
+      }
+
+      @include breakpoint-up(desktop) {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 5rem;
+        column-gap: 5rem;
+      }
+
+      @include breakpoint-up(large) {
+        column-gap: 4vw;
+      }
+    }
+  }
 }
