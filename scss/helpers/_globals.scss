@@ -39,6 +39,9 @@ a:focus {
   &-jc-fe {
     justify-content: flex-end;
   }
+  &-jc-sa {
+    justify-content: space-around;
+  }
 
   &-ai-c {
     align-items: center;
@@ -75,21 +78,21 @@ a:focus {
   }
 }
 
-.main {
-  padding-top: 3.4375rem;
+// .main {
+//   padding-top: 3.4375rem;
 
-  @include breakpoint-up(tablet) {
-    padding-top: 5.4375rem;
-  }
+//   @include breakpoint-up(tablet) {
+//     padding-top: 5.4375rem;
+//   }
 
-  @include breakpoint-up(iPadPro) {
-    padding-top: 5.4375rem;
-  }
+//   @include breakpoint-up(iPadPro) {
+//     padding-top: 5.4375rem;
+//   }
 
-  @include breakpoint-up(desktop) {
-    padding-top: 4.7rem;
-  }
-}
+//   @include breakpoint-up(desktop) {
+//     padding-top: 4.7rem;
+//   }
+// }
 
 .scene,
 canvas {

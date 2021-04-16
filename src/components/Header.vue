@@ -28,12 +28,6 @@
             <h3>Sobre nós</h3>
           </router-link>
         </div>
-        <div class="header__mobile__menu__links__topics flex flex-ai-c">
-          <h5>04</h5>
-          <router-link :to="{ name: 'About' }" @click.native="closeNavbar">
-            <h3>Contactos</h3>
-          </router-link>
-        </div>
       </div>
       <div class="header__mobile__menu__extra">
         <div class="header__mobile__menu__extra__socials flex flex-ai-c">
@@ -65,9 +59,6 @@
           <router-link :to="{ name: 'About' }">
             <h3>Sobre nós</h3>
           </router-link>
-        </div>
-        <div class="header__desktop__links flex flex-ai-c">
-          <h3 id="no_border">Contactos</h3>
         </div>
       </div>
     </div>

@@ -78,6 +78,11 @@ a:focus {
           justify-content: flex-end;
 }
 
+.flex-jc-sa {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
 .flex-ai-c {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -110,28 +115,6 @@ a:focus {
 @media (min-width: 64em) {
   .hide-for-desktop {
     display: none;
-  }
-}
-
-.main {
-  padding-top: 3.4375rem;
-}
-
-@media (min-width: 48em) {
-  .main {
-    padding-top: 5.4375rem;
-  }
-}
-
-@media (min-width: 64em) {
-  .main {
-    padding-top: 5.4375rem;
-  }
-}
-
-@media (min-width: 75em) {
-  .main {
-    padding-top: 4.7rem;
   }
 }
 
@@ -2418,5 +2401,131 @@ footer small {
 .buttons a:hover {
   background-color: #432cb2;
   color: #fefefe;
+}
+
+.login {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+
+.login h1 {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  font-size: 1.375rem;
+  margin-top: 0;
+  margin-bottom: 4rem;
+  color: #432cb2;
+}
+
+@media (min-width: 48em) {
+  .login h1 {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+
+@media (min-width: 48em) {
+  .login__form {
+    margin: 0 auto;
+  }
+}
+
+.login__form label {
+  font-size: 0.875rem;
+}
+
+@media (min-width: 48em) {
+  .login__form label {
+    font-size: 1rem;
+  }
+}
+
+.login__form input {
+  width: 100%;
+  padding: 0.6rem 1.25rem;
+  margin: 1rem 1rem 0 0;
+  border-radius: 2px;
+  border: 1px solid #616161;
+}
+
+.login__form input:focus {
+  border: 1px solid #616161;
+  outline: none;
+}
+
+@media (min-width: 48em) {
+  .login__form input {
+    padding: 1rem 1.25rem;
+    font-size: 1.0625rem;
+  }
+}
+
+@media (min-width: 75em) {
+  .login__form input {
+    border: 0.5px solid #0c1820;
+    font-size: 0.9375rem;
+  }
+}
+
+.login__form ::-webkit-input-placeholder {
+  font-family: "Open Sans";
+  font-size: 0.8125rem;
+}
+
+.login__form :-ms-input-placeholder {
+  font-family: "Open Sans";
+  font-size: 0.8125rem;
+}
+
+.login__form ::-ms-input-placeholder {
+  font-family: "Open Sans";
+  font-size: 0.8125rem;
+}
+
+.login__form ::placeholder {
+  font-family: "Open Sans";
+  font-size: 0.8125rem;
+}
+
+@media (min-width: 75em) {
+  .login__form ::-webkit-input-placeholder {
+    font-size: 0.9375rem;
+  }
+  .login__form :-ms-input-placeholder {
+    font-size: 0.9375rem;
+  }
+  .login__form ::-ms-input-placeholder {
+    font-size: 0.9375rem;
+  }
+  .login__form ::placeholder {
+    font-size: 0.9375rem;
+  }
+}
+
+.login__form #loginBtn {
+  background-color: #0c1820;
+  border: none;
+  color: #fefefe;
+  font-weight: 500;
+  padding: 0.8rem 1.25rem;
+  border-radius: 2px;
+  font-family: "IBM Plex Sans";
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+@media (min-width: 48em) {
+  .login__form #loginBtn {
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 75em) {
+  .login__form #loginBtn {
+    font-size: 1.0625rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */
