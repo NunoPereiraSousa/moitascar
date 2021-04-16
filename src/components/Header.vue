@@ -12,25 +12,27 @@
       <div class="header__mobile__menu__links">
         <div class="header__mobile__menu__links__topics flex flex-ai-c">
           <h5>01</h5>
-          <router-link :to="{ name: 'Cars' }">
+          <router-link :to="{ name: 'Home' }" @click.native="closeNavbar">
             <h3>Página inicial</h3>
           </router-link>
         </div>
         <div class="header__mobile__menu__links__topics flex flex-ai-c">
           <h5>02</h5>
-          <router-link :to="{ name: 'Cars' }">
+          <router-link :to="{ name: 'Cars' }" @click.native="closeNavbar">
             <h3>Carros</h3>
           </router-link>
         </div>
         <div class="header__mobile__menu__links__topics flex flex-ai-c">
           <h5>03</h5>
-          <router-link :to="{ name: 'About' }">
+          <router-link :to="{ name: 'About' }" @click.native="closeNavbar">
             <h3>Sobre nós</h3>
           </router-link>
         </div>
         <div class="header__mobile__menu__links__topics flex flex-ai-c">
           <h5>04</h5>
-          <h3>Contactos</h3>
+          <router-link :to="{ name: 'About' }" @click.native="closeNavbar">
+            <h3>Contactos</h3>
+          </router-link>
         </div>
       </div>
       <div class="header__mobile__menu__extra">
@@ -88,6 +90,23 @@ export default {
       );
 
       header__mobile__menu.classList.toggle("open__overlay");
+
+      document.body.classList.toggle("no_scroll");
+    },
+    closeNavbar() {
+      let lines = document.querySelectorAll(".header__hamburger__lines");
+
+      lines.forEach(line => {
+        line.classList.toggle("open");
+      });
+
+      let header__mobile__menu = document.querySelector(
+        ".header__mobile__menu"
+      );
+
+      header__mobile__menu.classList.toggle("open__overlay");
+
+      document.body.classList.remove("no_scroll");
     }
   }
 };

@@ -113,6 +113,28 @@ a:focus {
   }
 }
 
+.main {
+  padding-top: 3.4375rem;
+}
+
+@media (min-width: 48em) {
+  .main {
+    padding-top: 5.4375rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .main {
+    padding-top: 5.4375rem;
+  }
+}
+
+@media (min-width: 75em) {
+  .main {
+    padding-top: 4.7rem;
+  }
+}
+
 .scene,
 canvas {
   width: 100%;
@@ -121,6 +143,11 @@ canvas {
   top: 0%;
   left: 0%;
   z-index: -5;
+}
+
+.no_scroll {
+  overflow: hidden;
+  height: 100vh;
 }
 
 @font-face {
@@ -137,7 +164,9 @@ canvas {
   width: 100%;
   padding: 0rem 1.625rem;
   z-index: 999;
-  position: relative;
+  position: fixed;
+  top: 0px;
+  right: 0%;
   background-color: #fefefe;
   -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
           box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
@@ -467,6 +496,7 @@ footer small {
   font-weight: 600;
   font-size: 1.375rem;
   font-family: "IBM Plex Sans";
+  white-space: nowrap;
   text-shadow: 2px 2px 4px rgba(12, 24, 32, 0.2);
 }
 
@@ -1721,6 +1751,7 @@ footer small {
   color: #fefefe;
   font-weight: 500;
   padding: 1rem 1.25rem;
+  border-radius: 2px;
   font-family: "IBM Plex Sans";
   font-size: 1rem;
   cursor: pointer;
@@ -1921,61 +1952,6 @@ footer small {
     -webkit-column-gap: 3rem;
             column-gap: 3rem;
     row-gap: 4rem;
-  }
-}
-
-.cars_catalog__buttons {
-  position: fixed;
-  right: 5%;
-  bottom: 10%;
-}
-
-@media (min-width: 75em) {
-  .cars_catalog__buttons {
-    right: 4%;
-  }
-}
-
-.cars_catalog__buttons a {
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  background-color: #d8d8d8;
-  color: #000000;
-  -webkit-box-shadow: 0px 3px 10px rgba(97, 97, 97, 0.15), 0px -3px 10px rgba(97, 97, 97, 0.15);
-          box-shadow: 0px 3px 10px rgba(97, 97, 97, 0.15), 0px -3px 10px rgba(97, 97, 97, 0.15);
-}
-
-@media (min-width: 48em) {
-  .cars_catalog__buttons a {
-    width: 50px;
-    height: 50px;
-  }
-}
-
-@media (min-width: 75em) {
-  .cars_catalog__buttons a {
-    -webkit-box-shadow: 0px 3px 10px rgba(97, 97, 97, 0.075), 0px -3px 10px rgba(97, 97, 97, 0.075);
-            box-shadow: 0px 3px 10px rgba(97, 97, 97, 0.075), 0px -3px 10px rgba(97, 97, 97, 0.075);
-    background-color: rgba(216, 216, 216, 0.5);
-  }
-}
-
-@media (min-width: 120em) {
-  .cars_catalog__buttons a {
-    width: 60px;
-    height: 60px;
-    font-size: 1.0625rem;
-  }
-}
-
-.cars_catalog__buttons a:first-child {
-  margin-bottom: 1rem;
-}
-
-@media (min-width: 48em) {
-  .cars_catalog__buttons a:first-child {
-    margin-bottom: 2rem;
   }
 }
 
@@ -2380,5 +2356,67 @@ footer small {
 
 .about__reasons__grid__card p {
   color: rgba(254, 254, 254, 0.53);
+}
+
+.buttons {
+  position: fixed;
+  z-index: 500;
+  right: 5%;
+  bottom: 3%;
+}
+
+@media (min-width: 75em) {
+  .buttons {
+    right: 4%;
+    bottom: 10%;
+  }
+}
+
+.buttons a {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: #d8d8d8;
+  color: #000000;
+  -webkit-box-shadow: 0px 3px 10px rgba(97, 97, 97, 0.15), 0px -3px 10px rgba(97, 97, 97, 0.15);
+          box-shadow: 0px 3px 10px rgba(97, 97, 97, 0.15), 0px -3px 10px rgba(97, 97, 97, 0.15);
+}
+
+@media (min-width: 48em) {
+  .buttons a {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (min-width: 75em) {
+  .buttons a {
+    -webkit-box-shadow: 0px 3px 10px rgba(97, 97, 97, 0.075), 0px -3px 10px rgba(97, 97, 97, 0.075);
+            box-shadow: 0px 3px 10px rgba(97, 97, 97, 0.075), 0px -3px 10px rgba(97, 97, 97, 0.075);
+    background-color: rgba(216, 216, 216, 0.5);
+  }
+}
+
+@media (min-width: 120em) {
+  .buttons a {
+    width: 60px;
+    height: 60px;
+    font-size: 1.0625rem;
+  }
+}
+
+.buttons a:first-child {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 48em) {
+  .buttons a:first-child {
+    margin-bottom: 2rem;
+  }
+}
+
+.buttons a:hover {
+  background-color: #432cb2;
+  color: #fefefe;
 }
 /*# sourceMappingURL=style.css.map */

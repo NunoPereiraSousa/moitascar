@@ -25,16 +25,6 @@
         extras="Colunas JBL, nitro e acentos estufados  nitro e acentos estufados."
       />
     </div>
-    <div class="cars_catalog__buttons">
-      <div class="flex flex-ai-c flex-fd-c">
-        <a href="mailto:moitascar24@gmail.com" class="flex flex-ai-c flex-jc-c"
-          ><i class="fas fa-envelope"></i
-        ></a>
-        <a href="tel:+351917523009" class="flex flex-ai-c flex-jc-c"
-          ><i class="fas fa-phone"></i
-        ></a>
-      </div>
-    </div>
   </div>
 </template>
 
