@@ -1,0 +1,87 @@
+.add_car {
+  position: fixed;
+  right: -50vw;
+  top: 0%;
+  height: 100vh;
+  width: 40vw;
+
+  background-color: $dark;
+
+  transition: all 0.5s;
+
+  &.open {
+    right: 0;
+  }
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($color: $black, $alpha: 0.25);
+
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s;
+
+    &.open {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &__form {
+    grid-template-columns: 1fr 1fr;
+    // row-gap: 2rem;
+    column-gap: 2rem;
+  }
+
+  form {
+    // width: 100%;
+  }
+
+  label {
+    color: $white;
+  }
+
+  input,
+  textarea {
+    padding: 0.7rem 1.25rem;
+    margin: 1rem 1rem 2rem 0;
+
+    width: 100%;
+
+    border-radius: 2px;
+    border: 1px solid $grey;
+
+    &:focus {
+      border: 1px solid $grey;
+      outline: none;
+    }
+  }
+
+  textarea {
+    margin-top: 1.3rem;
+  }
+
+  ::placeholder {
+    font-family: $openSans;
+    font-size: $_15px;
+  }
+
+  #addCarBtn {
+    grid-area: 3 / 1 / 4 / 3;
+    background-color: $white;
+    color: $dark;
+    font-size: $_17px;
+
+    padding: 0.8rem 1.25rem;
+
+    border-radius: 2px;
+
+    cursor: pointer;
+  }
+}

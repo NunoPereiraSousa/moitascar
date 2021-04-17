@@ -2751,4 +2751,103 @@ footer small {
   -webkit-transform: scale(1.02);
           transform: scale(1.02);
 }
+
+.add_car {
+  position: fixed;
+  right: -50vw;
+  top: 0%;
+  height: 100vh;
+  width: 40vw;
+  background-color: #0c1820;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.add_car.open {
+  right: 0;
+}
+
+.add_car__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.25);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.add_car__overlay.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.add_car__form {
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -webkit-column-gap: 2rem;
+          column-gap: 2rem;
+}
+
+.add_car label {
+  color: #fefefe;
+}
+
+.add_car input,
+.add_car textarea {
+  padding: 0.7rem 1.25rem;
+  margin: 1rem 1rem 2rem 0;
+  width: 100%;
+  border-radius: 2px;
+  border: 1px solid #616161;
+}
+
+.add_car input:focus,
+.add_car textarea:focus {
+  border: 1px solid #616161;
+  outline: none;
+}
+
+.add_car textarea {
+  margin-top: 1.3rem;
+}
+
+.add_car ::-webkit-input-placeholder {
+  font-family: "Open Sans";
+  font-size: 0.9375rem;
+}
+
+.add_car :-ms-input-placeholder {
+  font-family: "Open Sans";
+  font-size: 0.9375rem;
+}
+
+.add_car ::-ms-input-placeholder {
+  font-family: "Open Sans";
+  font-size: 0.9375rem;
+}
+
+.add_car ::placeholder {
+  font-family: "Open Sans";
+  font-size: 0.9375rem;
+}
+
+.add_car #addCarBtn {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: 3 / 1 / 4 / 3;
+  background-color: #fefefe;
+  color: #0c1820;
+  font-size: 1.0625rem;
+  padding: 0.8rem 1.25rem;
+  border-radius: 2px;
+  cursor: pointer;
+}
 /*# sourceMappingURL=style.css.map */

@@ -10,7 +10,7 @@
           ++
         </button>
       </div>
-      <button class="addBtn">
+      <button class="addBtn" @click="openForm">
         Adicionar carro
       </button>
     </div>
@@ -31,21 +31,35 @@
         extras="Colunas JBL, nitro e acentos estufados  nitro e acentos estufados."
       />
     </div>
+    <AddCar />
   </section>
 </template>
 
 <script>
 import CarsCardAdminCatalog from "@/components/CarsCardAdminCatalog.vue";
+import AddCar from "@/components/AddCar.vue";
 
 export default {
   components: {
-    CarsCardAdminCatalog
+    CarsCardAdminCatalog,
+    AddCar
   },
   name: "Admin",
   data: () => {
     return {
       n: 3
     };
+  },
+  methods: {
+    openForm() {
+      let form = document.querySelector(".add_car");
+
+      form.classList.toggle("open");
+
+      let overlay = document.querySelector(".add_car__overlay");
+
+      overlay.classList.toggle("open");
+    }
   }
 };
 </script>
