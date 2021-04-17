@@ -1,10 +1,20 @@
 <template>
   <div>
     <header class="admin_navbar hide-for-desktop flex flex-ai-c flex-jc-sb">
-      <h1>Aasd</h1>
-      <h1>Aasd</h1>
-      <h1>Aasd</h1>
-      <h1>Aasd</h1>
+      <router-link :to="{ name: '' }">
+        <h3>Carros</h3>
+      </router-link>
+      <router-link :to="{ name: '' }">
+        <h3>Testemunhos</h3>
+      </router-link>
+    </header>
+    <header class="admin_navbar hide-for-mobile flex flex-ai-c flex-jc-sa">
+      <router-link :to="{ name: '' }">
+        <h3>Carros</h3>
+      </router-link>
+      <router-link :to="{ name: '' }">
+        <h3>Testemunhos</h3>
+      </router-link>
     </header>
   </div>
 </template>

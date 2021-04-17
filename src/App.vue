@@ -4,7 +4,7 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div> -->
-    <div v-if="this.$route.name == 'Login'">
+    <div v-if="this.$route.name !== 'Login' && this.$route.name !== 'Admin'">
       <Header />
     </div>
     <div v-if="this.$route.name == 'Admin'">

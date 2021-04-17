@@ -15,6 +15,52 @@
     border-top: 1px solid rgba($color: $grey, $alpha: 0.3);
   }
 
+  &__img {
+    position: relative;
+
+    &__overlay {
+      position: absolute;
+      left: 0%;
+      bottom: 0%;
+
+      height: auto;
+      width: 100%;
+      background-color: $dark;
+
+      padding: 1rem 2rem;
+
+      button {
+        border: 1px solid $grey;
+        border-radius: 4px;
+        width: 100px;
+        padding: 0.5rem 1.25rem;
+
+        background-color: transparent;
+        font-family: $ibm;
+
+        font-size: $_16px;
+
+        cursor: pointer;
+      }
+
+      .edit {
+        color: #ffad10;
+
+        &:hover {
+          border: 1px solid #ffad10;
+        }
+      }
+
+      .remove {
+        color: #fe6161;
+
+        &:hover {
+          border: 1px solid #fe6161;
+        }
+      }
+    }
+  }
+
   img {
     height: 12.875rem;
     width: 100%;
