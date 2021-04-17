@@ -4,10 +4,20 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div> -->
-    <div v-if="this.$route.name !== 'Login' && this.$route.name !== 'Admin'">
+    <div
+      v-if="
+        this.$route.name !== 'Login' &&
+          this.$route.name !== 'Admin' &&
+          this.$route.name !== 'AdminTestimonials'
+      "
+    >
       <Header />
     </div>
-    <div v-if="this.$route.name == 'Admin'">
+    <div
+      v-if="
+        this.$route.name == 'Admin' || this.$route.name == 'AdminTestimonials'
+      "
+    >
       <AdminHeader />
     </div>
     <router-view class="main" />

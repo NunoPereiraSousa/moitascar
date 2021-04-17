@@ -1,15 +1,17 @@
 .admin_navbar {
   width: 100%;
   position: fixed;
-  bottom: 0%;
+  z-index: 20;
+  top: 0%;
   left: 0%;
 
   padding: 1rem 1.625rem;
+  background-color: $dark;
 
   box-shadow: 0px -2px 10px rgba($color: $black, $alpha: 0.05);
 
   a {
-    color: $black;
+    color: $white;
 
     h3 {
       margin: 0;

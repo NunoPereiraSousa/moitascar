@@ -78,6 +78,11 @@ a:focus {
   }
 }
 
+.no_scroll {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
 // .main {
 //   padding-top: 3.4375rem;
 

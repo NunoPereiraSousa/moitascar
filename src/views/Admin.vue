@@ -3,16 +3,23 @@
     <h1 class="admin_landing__title">Tem {{ n }} veículos à venda.</h1>
 
     <div class="admin_landing__filters flex flex-ai-c flex-jc-sb">
-      <div>
+      <div class="flex">
         <input type="text" id="carTxt" placeholder="Pesquisar carro" />
         <button class="filterBtn">
           Ordenar por preço <br />
           ++
         </button>
       </div>
-      <button class="addBtn" @click="openForm">
-        Adicionar carro
-      </button>
+      <div>
+        <button class="addBtn button" @click="openForm">
+          Adicionar carro</button
+        ><button class="addBtn button" @click="openBrandForm">
+          Adicionar marca
+        </button>
+        <button class="addBtn button" @click="openModelForm">
+          Adicionar modelo
+        </button>
+      </div>
     </div>
 
     <div class="admin_landing__cars grid">
@@ -32,17 +39,29 @@
       />
     </div>
     <AddCar />
+    <AddBrand />
+    <AddModel />
+    <EditCar />
+    <RemoveCar car="Porche Carrera" />
   </section>
 </template>
 
 <script>
 import CarsCardAdminCatalog from "@/components/CarsCardAdminCatalog.vue";
 import AddCar from "@/components/AddCar.vue";
+import AddBrand from "@/components/AddBrand.vue";
+import AddModel from "@/components/AddModel.vue";
+import EditCar from "@/components/EditCar.vue";
+import RemoveCar from "@/components/RemoveCar.vue";
 
 export default {
   components: {
     CarsCardAdminCatalog,
-    AddCar
+    AddCar,
+    AddBrand,
+    AddModel,
+    EditCar,
+    RemoveCar
   },
   name: "Admin",
   data: () => {
@@ -57,6 +76,24 @@ export default {
       form.classList.toggle("open");
 
       let overlay = document.querySelector(".add_car__overlay");
+
+      overlay.classList.toggle("open");
+    },
+    openBrandForm() {
+      let form = document.querySelector(".add_brand");
+
+      form.classList.toggle("open");
+
+      let overlay = document.querySelector(".add_brand__overlay");
+
+      overlay.classList.toggle("open");
+    },
+    openModelForm() {
+      let form = document.querySelector(".add_model");
+
+      form.classList.toggle("open");
+
+      let overlay = document.querySelector(".add_model__overlay");
 
       overlay.classList.toggle("open");
     }

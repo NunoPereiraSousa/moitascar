@@ -118,6 +118,11 @@ a:focus {
   }
 }
 
+.no_scroll {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
 .scene,
 canvas {
   width: 100%;
@@ -2087,6 +2092,12 @@ footer small {
   text-shadow: 2px 2px 4px rgba(44, 178, 141, 0.075);
 }
 
+@media (min-width: 75em) {
+  .cars_catalog__grid__card__info h2 {
+    font-size: 1.25rem;
+  }
+}
+
 @media (min-width: 120em) {
   .cars_catalog__grid__card__info h2 {
     font-size: 1.375rem;
@@ -2105,6 +2116,14 @@ footer small {
 .cars_catalog__grid__card__info a b {
   font-weight: 600;
   font-size: 0.9375rem;
+}
+
+@media (min-width: 75em) {
+  .cars_catalog__grid__card__info p b,
+  .cars_catalog__grid__card__info a b {
+    font-size: 1.0625rem;
+    margin-bottom: 0;
+  }
 }
 
 @media (min-width: 120em) {
@@ -2135,7 +2154,7 @@ footer small {
 @media (min-width: 75em) {
   .cars_catalog__grid__card__info p,
   .cars_catalog__grid__card__info a {
-    font-size: 1rem;
+    font-size: 1.0625rem;
     margin-bottom: 0;
   }
 }
@@ -2176,7 +2195,7 @@ footer small {
 
 @media (min-width: 75em) {
   .cars_catalog__grid__card__info__details {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     -webkit-column-gap: 0;
             column-gap: 0;
     row-gap: 0;
@@ -2188,6 +2207,12 @@ footer small {
   font-weight: 400;
   margin-bottom: 0.4rem;
   font-family: "IBM Plex Sans";
+}
+
+@media (min-width: 75em) {
+  .cars_catalog__grid__card__info__details h4 {
+    font-size: 1rem;
+  }
 }
 
 @media (min-width: 120em) {
@@ -2573,15 +2598,17 @@ footer small {
 .admin_navbar {
   width: 100%;
   position: fixed;
-  bottom: 0%;
+  z-index: 20;
+  top: 0%;
   left: 0%;
   padding: 1rem 1.625rem;
+  background-color: #0c1820;
   -webkit-box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.05);
           box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .admin_navbar a {
-  color: #000000;
+  color: #fefefe;
 }
 
 .admin_navbar a h3 {
@@ -2591,25 +2618,8 @@ footer small {
 }
 
 .admin_landing {
-  padding: 4rem 2rem;
-}
-
-@media (min-width: 48em) {
-  .admin_landing {
-    padding: 6rem 4rem;
-  }
-}
-
-@media (min-width: 64em) {
-  .admin_landing {
-    padding: 8rem 6rem;
-  }
-}
-
-@media (min-width: 75em) {
-  .admin_landing {
-    padding: 4rem 8vw 6rem;
-  }
+  padding: 6rem 8vw;
+  width: 100%;
 }
 
 @media (min-width: 120em) {
@@ -2619,36 +2629,21 @@ footer small {
 }
 
 .admin_landing__title {
-  margin: 0 0 4rem;
   font-family: "IBM Plex Sans";
-  font-size: 1.375rem;
   text-align: center;
-  text-shadow: 2px 2px 4px rgba(12, 24, 32, 0.2);
-}
-
-@media (min-width: 75em) {
-  .admin_landing__title {
-    font-size: 2rem;
-    font-weight: 500;
-    text-shadow: 2px 2px 4px rgba(12, 24, 32, 0.07);
-    margin: 0 0 6rem;
-  }
+  font-size: 2rem;
+  font-weight: 500;
+  text-shadow: 2px 2px 4px rgba(12, 24, 32, 0.07);
+  margin: 0 0 6rem;
 }
 
 .admin_landing__filters {
-  margin-bottom: 2rem;
-}
-
-@media (min-width: 75em) {
-  .admin_landing__filters {
-    margin-bottom: 3rem;
-    width: 80%;
-  }
+  margin-bottom: 3rem;
 }
 
 .admin_landing__filters input {
-  padding: 0.6rem 1.25rem;
-  width: 60%;
+  padding: 0rem 1.25rem;
+  width: 100%;
   margin-right: 1rem;
   border-radius: 2px;
   border: 1px solid #616161;
@@ -2657,19 +2652,6 @@ footer small {
 .admin_landing__filters input:focus {
   border: 1px solid #616161;
   outline: none;
-}
-
-@media (min-width: 48em) {
-  .admin_landing__filters input {
-    width: 20%;
-    margin-right: 2rem;
-  }
-}
-
-@media (min-width: 75em) {
-  .admin_landing__filters input {
-    padding: 0.8rem 1.25rem;
-  }
 }
 
 @media (min-width: 120em) {
@@ -2717,7 +2699,7 @@ footer small {
   line-height: 1.6;
   white-space: nowrap;
   border: none;
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-family: "Open Sans";
   cursor: pointer;
 }
@@ -2728,12 +2710,6 @@ footer small {
 
 .admin_landing__filters button:focus {
   outline: none;
-}
-
-@media (min-width: 75em) {
-  .admin_landing__filters button {
-    font-size: 1rem;
-  }
 }
 
 .admin_landing__filters button.filterBtn {
@@ -2752,23 +2728,448 @@ footer small {
           transform: scale(1.02);
 }
 
-.add_car {
+.admin_landing__filters button.button:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.admin_landing .cars_catalog__grid__card {
+  width: 100% !important;
+}
+
+.add_car,
+.add_brand,
+.add_model,
+.edit_car,
+.edit_brand,
+.edit_model,
+.edit_review,
+.add_review {
   position: fixed;
-  right: -50vw;
+  z-index: 90;
+  right: -60vw;
   top: 0%;
   height: 100vh;
-  width: 40vw;
+  width: 60vw;
+  padding: 4rem 3rem;
   background-color: #0c1820;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
 
-.add_car.open {
+@media (min-width: 120em) {
+  .add_car,
+  .add_brand,
+  .add_model,
+  .edit_car,
+  .edit_brand,
+  .edit_model,
+  .edit_review,
+  .add_review {
+    right: -50vw;
+    width: 50vw;
+  }
+}
+
+.add_car.open,
+.add_brand.open,
+.add_model.open,
+.edit_car.open,
+.edit_brand.open,
+.edit_model.open,
+.edit_review.open,
+.add_review.open {
   right: 0;
 }
 
-.add_car__overlay {
+.add_car__overlay,
+.add_brand__overlay,
+.add_model__overlay,
+.edit_car__overlay,
+.edit_brand__overlay,
+.edit_model__overlay,
+.edit_review__overlay,
+.add_review__overlay {
   position: fixed;
+  z-index: 80;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.25);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.add_car__overlay.open,
+.add_brand__overlay.open,
+.add_model__overlay.open,
+.edit_car__overlay.open,
+.edit_brand__overlay.open,
+.edit_model__overlay.open,
+.edit_review__overlay.open,
+.add_review__overlay.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.add_car__form,
+.edit_car__form {
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -webkit-column-gap: 2rem;
+          column-gap: 2rem;
+}
+
+.add_car__form label,
+.edit_car__form label {
+  color: #fefefe;
+  font-size: 0.9375rem;
+}
+
+.add_car__form input,
+.add_car__form textarea,
+.add_car__form select,
+.edit_car__form input,
+.edit_car__form textarea,
+.edit_car__form select {
+  padding: 0.7rem 1.25rem;
+  margin: 1rem 1rem 1rem 0;
+  width: 100%;
+  border-radius: 2px;
+  border: 1px solid #616161;
+}
+
+@media (min-width: 120em) {
+  .add_car__form input,
+  .add_car__form textarea,
+  .add_car__form select,
+  .edit_car__form input,
+  .edit_car__form textarea,
+  .edit_car__form select {
+    margin-bottom: 2rem;
+  }
+}
+
+.add_car__form input:focus,
+.add_car__form textarea:focus,
+.add_car__form select:focus,
+.edit_car__form input:focus,
+.edit_car__form textarea:focus,
+.edit_car__form select:focus {
+  border: 1px solid #616161;
+  outline: none;
+}
+
+.add_car__form ::-webkit-input-placeholder,
+.edit_car__form ::-webkit-input-placeholder {
+  font-family: "Open Sans";
+  font-size: 0.9375rem;
+}
+
+.add_car__form :-ms-input-placeholder,
+.edit_car__form :-ms-input-placeholder {
+  font-family: "Open Sans";
+  font-size: 0.9375rem;
+}
+
+.add_car__form ::-ms-input-placeholder,
+.edit_car__form ::-ms-input-placeholder {
+  font-family: "Open Sans";
+  font-size: 0.9375rem;
+}
+
+.add_car__form ::placeholder,
+.edit_car__form ::placeholder {
+  font-family: "Open Sans";
+  font-size: 0.9375rem;
+}
+
+.add_car__form #addCarBtn,
+.edit_car__form #addCarBtn {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: 3 / 1 / 4 / 4;
+  background-color: #fefefe;
+  color: #0c1820;
+  font-size: 1.0625rem;
+  margin-bottom: 0;
+  padding: 0.8rem 1.25rem;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.add_car #extras,
+.edit_car #extras {
+  -ms-grid-row: 2 !important;
+  -ms-grid-row-span: 1 !important;
+  -ms-grid-column: 1 !important;
+  -ms-grid-column-span: 3 !important;
+  grid-area: 2 / 1 / 3 / 4 !important;
+}
+
+.add_brand__form label,
+.edit_brand__form label {
+  color: #fefefe;
+  font-size: 0.9375rem;
+}
+
+.add_brand__form input,
+.edit_brand__form input {
+  padding: 0.7rem 1.25rem;
+  margin: 1rem 1rem 2rem 0;
+  width: 100%;
+  border-radius: 2px;
+  border: 1px solid #616161;
+}
+
+.add_brand__form input:focus,
+.edit_brand__form input:focus {
+  border: 1px solid #616161;
+  outline: none;
+}
+
+.add_brand__form ::-webkit-input-placeholder,
+.edit_brand__form ::-webkit-input-placeholder {
+  font-family: "Open Sans";
+  font-size: 0.9375rem;
+}
+
+.add_brand__form :-ms-input-placeholder,
+.edit_brand__form :-ms-input-placeholder {
+  font-family: "Open Sans";
+  font-size: 0.9375rem;
+}
+
+.add_brand__form ::-ms-input-placeholder,
+.edit_brand__form ::-ms-input-placeholder {
+  font-family: "Open Sans";
+  font-size: 0.9375rem;
+}
+
+.add_brand__form ::placeholder,
+.edit_brand__form ::placeholder {
+  font-family: "Open Sans";
+  font-size: 0.9375rem;
+}
+
+.add_brand__form #addBrandBtn,
+.edit_brand__form #addBrandBtn {
+  background-color: #fefefe;
+  color: #0c1820;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  margin-bottom: 0;
+  padding: 0.8rem 1.25rem;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.add_model__form label,
+.edit_model__form label {
+  color: #fefefe;
+  font-size: 0.9375rem;
+}
+
+.add_model__form input,
+.edit_model__form input {
+  padding: 0.7rem 1.25rem;
+  margin: 1rem 1rem 2rem 0;
+  width: 100%;
+  border-radius: 2px;
+  border: 1px solid #616161;
+}
+
+.add_model__form input:focus,
+.edit_model__form input:focus {
+  border: 1px solid #616161;
+  outline: none;
+}
+
+.add_model__form ::-webkit-input-placeholder,
+.edit_model__form ::-webkit-input-placeholder {
+  font-family: "Open Sans";
+  font-size: 0.9375rem;
+}
+
+.add_model__form :-ms-input-placeholder,
+.edit_model__form :-ms-input-placeholder {
+  font-family: "Open Sans";
+  font-size: 0.9375rem;
+}
+
+.add_model__form ::-ms-input-placeholder,
+.edit_model__form ::-ms-input-placeholder {
+  font-family: "Open Sans";
+  font-size: 0.9375rem;
+}
+
+.add_model__form ::placeholder,
+.edit_model__form ::placeholder {
+  font-family: "Open Sans";
+  font-size: 0.9375rem;
+}
+
+.add_model__form #addModelBtn,
+.edit_model__form #addModelBtn {
+  background-color: #fefefe;
+  color: #0c1820;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  margin-bottom: 0;
+  padding: 0.8rem 1.25rem;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.edit_review__form label,
+.add_review__form label {
+  color: #fefefe;
+  font-size: 0.9375rem;
+}
+
+.edit_review__form input,
+.edit_review__form textarea,
+.add_review__form input,
+.add_review__form textarea {
+  padding: 0.7rem 1.25rem;
+  margin: 0rem 1rem 2rem 0;
+  width: 100%;
+  border-radius: 2px;
+  border: 1px solid #616161;
+}
+
+.edit_review__form input:focus,
+.edit_review__form textarea:focus,
+.add_review__form input:focus,
+.add_review__form textarea:focus {
+  border: 1px solid #616161;
+  outline: none;
+}
+
+.edit_review__form ::-webkit-input-placeholder,
+.add_review__form ::-webkit-input-placeholder {
+  font-family: "Open Sans";
+  font-size: 0.9375rem;
+}
+
+.edit_review__form :-ms-input-placeholder,
+.add_review__form :-ms-input-placeholder {
+  font-family: "Open Sans";
+  font-size: 0.9375rem;
+}
+
+.edit_review__form ::-ms-input-placeholder,
+.add_review__form ::-ms-input-placeholder {
+  font-family: "Open Sans";
+  font-size: 0.9375rem;
+}
+
+.edit_review__form ::placeholder,
+.add_review__form ::placeholder {
+  font-family: "Open Sans";
+  font-size: 0.9375rem;
+}
+
+.edit_review__form #editReviewBtn,
+.edit_review__form #addReviewBtn,
+.add_review__form #editReviewBtn,
+.add_review__form #addReviewBtn {
+  background-color: #fefefe;
+  color: #0c1820;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  margin-bottom: 0;
+  padding: 0.8rem 1.25rem;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.add_brand,
+.add_model,
+.edit_brand,
+.edit_model,
+.edit_review,
+.add_review {
+  width: 30vw;
+  right: -30vw;
+}
+
+.add_brand .down,
+.add_model .down,
+.edit_brand .down,
+.edit_model .down,
+.edit_review .down,
+.add_review .down {
+  width: 100%;
+  position: absolute;
+  bottom: 5%;
+}
+
+.add_brand .down hr,
+.add_model .down hr,
+.edit_brand .down hr,
+.edit_model .down hr,
+.edit_review .down hr,
+.add_review .down hr {
+  width: 90%;
+  border: none;
+  height: 1px;
+  background-color: rgba(254, 254, 254, 0.25);
+}
+
+.add_brand .down button,
+.add_model .down button,
+.edit_brand .down button,
+.edit_model .down button,
+.edit_review .down button,
+.add_review .down button {
+  background-color: transparent;
+  color: #fefefe;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  border: none;
+  margin: 0 auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.8rem 1.25rem;
+  cursor: pointer;
+}
+
+.remove_car,
+.remove_review {
+  position: fixed;
+  z-index: 90;
+  left: 50%;
+  top: 54%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 2rem 3rem;
+  border-radius: 10px;
+  background-color: #fefefe;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.remove_car.open,
+.remove_review.open {
+  top: 50%;
+  visibility: visible;
+  opacity: 1;
+}
+
+.remove_car__overlay,
+.remove_review__overlay {
+  position: fixed;
+  z-index: 80;
   top: 0;
   left: 0;
   right: 0;
@@ -2782,72 +3183,190 @@ footer small {
   transition: all 0.5s;
 }
 
-.add_car__overlay.open {
+.remove_car__overlay.open,
+.remove_review__overlay.open {
   visibility: visible;
   opacity: 1;
 }
 
-.add_car__form {
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  -webkit-column-gap: 2rem;
-          column-gap: 2rem;
+.remove_car__title,
+.remove_review__title {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  text-align: center;
 }
 
-.add_car label {
+.remove_car__title span,
+.remove_review__title span {
+  color: #432cb2;
+}
+
+.remove_car__buttons,
+.remove_review__buttons {
+  margin-top: 3rem;
+}
+
+.remove_car__buttons button,
+.remove_review__buttons button {
+  padding: 0.6rem 2rem;
+  border-radius: 6px;
+  font-size: 0.9375rem;
+  font-family: "IBM Plex Sans";
+  cursor: pointer;
+}
+
+.remove_car__buttons button:first-child,
+.remove_review__buttons button:first-child {
+  margin-right: 2rem;
+  background-color: #0c1820;
   color: #fefefe;
+  border: 1px solid transparent;
 }
 
-.add_car input,
-.add_car textarea {
-  padding: 0.7rem 1.25rem;
-  margin: 1rem 1rem 2rem 0;
+.remove_car__buttons button:last-child,
+.remove_review__buttons button:last-child {
+  border: 1px solid #0c1820;
+  background-color: transparent;
+}
+
+.admin_testimonials {
+  padding: 6rem 8vw;
   width: 100%;
-  border-radius: 2px;
-  border: 1px solid #616161;
 }
 
-.add_car input:focus,
-.add_car textarea:focus {
-  border: 1px solid #616161;
+@media (min-width: 120em) {
+  .admin_testimonials {
+    padding: 10rem 10vw;
+  }
+}
+
+.admin_testimonials__title {
+  font-family: "IBM Plex Sans";
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+  text-shadow: 2px 2px 4px rgba(12, 24, 32, 0.07);
+  margin: 0 0 6rem;
+}
+
+.admin_testimonials__grid {
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  row-gap: 4rem;
+  -webkit-column-gap: 2em;
+          column-gap: 2em;
+}
+
+.admin_testimonials__button {
+  margin: 0 0 3rem;
+}
+
+.admin_testimonials__button button {
+  background-color: #0c1820;
+  color: #fefefe;
+  padding: 0.5rem 1.25rem;
+  border-radius: 4px;
+  line-height: 1.6;
+  white-space: nowrap;
+  border: none;
+  font-size: 1rem;
+  font-family: "Open Sans";
+  cursor: pointer;
+}
+
+.admin_testimonials__button button:focus {
   outline: none;
 }
 
-.add_car textarea {
-  margin-top: 1.3rem;
+.admin_testimonials__card {
+  -webkit-box-shadow: 0 6px 30px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 6px 30px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+  border-top: 3px solid #432cb2;
+  margin: 0 2rem 0 0;
+  height: 20rem;
+  padding: 0 2rem 2rem;
 }
 
-.add_car ::-webkit-input-placeholder {
-  font-family: "Open Sans";
-  font-size: 0.9375rem;
+.admin_testimonials__card ::-webkit-scrollbar {
+  width: 4px;
 }
 
-.add_car :-ms-input-placeholder {
-  font-family: "Open Sans";
-  font-size: 0.9375rem;
-}
-
-.add_car ::-ms-input-placeholder {
-  font-family: "Open Sans";
-  font-size: 0.9375rem;
-}
-
-.add_car ::placeholder {
-  font-family: "Open Sans";
-  font-size: 0.9375rem;
-}
-
-.add_car #addCarBtn {
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-area: 3 / 1 / 4 / 3;
-  background-color: #fefefe;
-  color: #0c1820;
-  font-size: 1.0625rem;
-  padding: 0.8rem 1.25rem;
+.admin_testimonials__card ::-webkit-scrollbar-track {
+  background-color: transparent;
   border-radius: 2px;
+}
+
+.admin_testimonials__card ::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.admin_testimonials__card ::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 120em) {
+  .admin_testimonials__card {
+    padding: 0 2rem;
+    height: 20.875rem;
+  }
+}
+
+.admin_testimonials__card h3 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  letter-spacing: 0.2px;
+  font-family: "IBM Plex Sans";
+  color: #2cb28d;
+  font-style: italic;
+  font-weight: 500;
+  margin: 3rem 0 1rem;
+}
+
+.admin_testimonials__card h6 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  font-family: "Open Sans";
+  font-style: italic;
+  color: rgba(12, 24, 32, 0.53);
+  margin: 0 0 2rem;
+}
+
+.admin_testimonials__card__text p {
+  overflow-y: auto;
+  overflow-x: hidden;
+  white-space: normal;
+  max-height: 8rem;
+  letter-spacing: 0.3px;
+  margin: 0;
+  text-align: left;
+  line-height: 1.6;
+  font-size: 1rem;
+  padding-right: 10px;
+}
+
+.admin_testimonials__card hr {
+  width: 100%;
+  margin: 2rem auto;
+}
+
+.admin_testimonials__card__buttons button {
+  background-color: transparent;
+  border: none;
   cursor: pointer;
+}
+
+@media (min-width: 120em) {
+  .admin_testimonials__card__buttons button {
+    font-size: 0.9375rem;
+  }
+}
+
+.admin_testimonials__card__buttons button i {
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  margin-right: 0.3rem;
 }
 /*# sourceMappingURL=style.css.map */

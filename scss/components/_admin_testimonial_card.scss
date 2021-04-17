@@ -1,0 +1,97 @@
+.admin_testimonials__card {
+  box-shadow: 0 6px 30px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+  border-top: 3px solid $purple;
+  margin: 0 2rem 0 0;
+
+  height: 20rem;
+
+  padding: 0 2rem 2rem;
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba($color: $black, $alpha: 0.2);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba($color: $black, $alpha: 0.2);
+  }
+
+  @include breakpoint-up(large) {
+    padding: 0 2rem;
+    height: 20.875rem;
+  }
+
+  h3 {
+    text-align: center;
+    font-weight: 400;
+    font-size: $_17px;
+    letter-spacing: 0.2px;
+    font-family: $ibm;
+    color: $green;
+    font-style: italic;
+
+    font-weight: 500;
+
+    margin: 3rem 0 1rem;
+  }
+
+  h6 {
+    text-align: center;
+    font-weight: 400;
+    font-size: $_15px;
+
+    font-family: $openSans;
+    font-style: italic;
+    color: rgba($color: $dark, $alpha: 0.53);
+
+    margin: 0 0 2rem;
+  }
+
+  &__text {
+    p {
+      overflow-y: auto;
+      overflow-x: hidden;
+      white-space: normal;
+
+      max-height: 8rem;
+      letter-spacing: 0.3px;
+      margin: 0;
+      text-align: left;
+      line-height: 1.6;
+      font-size: $_16px;
+      padding-right: 10px;
+    }
+  }
+
+  hr {
+    width: 100%;
+    margin: 2rem auto;
+  }
+
+  &__buttons {
+    button {
+      background-color: transparent;
+      border: none;
+
+      cursor: pointer;
+
+      @include breakpoint-up(large) {
+        font-size: $_15px;
+      }
+
+      i {
+        transition: all 0.4s;
+        margin-right: 0.3rem;
+      }
+    }
+  }
+}

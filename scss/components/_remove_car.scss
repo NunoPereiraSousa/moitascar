@@ -1,0 +1,81 @@
+.remove_car,
+.remove_review {
+  position: fixed;
+  z-index: 90;
+  left: 50%;
+  top: 54%;
+  transform: translate(-50%, -50%);
+  padding: 2rem 3rem;
+
+  border-radius: 10px;
+  background-color: $white;
+
+  visibility: hidden;
+  opacity: 0;
+
+  transition: all 0.5s;
+
+  &.open {
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__overlay {
+    position: fixed;
+    z-index: 80;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($color: $black, $alpha: 0.25);
+
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s;
+
+    &.open {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &__title {
+    font-size: $_18px;
+    line-height: 1.7;
+
+    text-align: center;
+
+    span {
+      color: $purple;
+    }
+  }
+
+  &__buttons {
+    margin-top: 3rem;
+
+    button {
+      padding: 0.6rem 2rem;
+      border-radius: 6px;
+
+      font-size: $_15px;
+      font-family: $ibm;
+
+      cursor: pointer;
+
+      &:first-child {
+        margin-right: 2rem;
+        background-color: $dark;
+        color: $white;
+        border: 1px solid transparent;
+      }
+
+      &:last-child {
+        border: 1px solid $dark;
+        background-color: transparent;
+      }
+    }
+  }
+}

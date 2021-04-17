@@ -5,8 +5,8 @@
       <div
         class="cars_catalog__grid__card__img__overlay flex flex-ai-c flex-jc-sb"
       >
-        <button class="edit">Editar</button>
-        <button class="remove">Remover</button>
+        <button class="edit" @click="openEditForm">Editar</button>
+        <button class="remove" @click="openRemovePopup">Remover</button>
       </div>
     </div>
     <div class="cars_catalog__grid__card__info">
@@ -98,6 +98,24 @@ export default {
     },
     formatKm(n) {
       return `${n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")} km`;
+    },
+    openEditForm() {
+      let form = document.querySelector(".edit_car");
+
+      form.classList.toggle("open");
+
+      let overlay = document.querySelector(".edit_car__overlay");
+
+      overlay.classList.toggle("open");
+    },
+    openRemovePopup() {
+      let form = document.querySelector(".remove_car");
+
+      form.classList.toggle("open");
+
+      let overlay = document.querySelector(".remove_car__overlay");
+
+      overlay.classList.toggle("open");
     }
   }
 };

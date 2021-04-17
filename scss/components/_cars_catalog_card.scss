@@ -120,6 +120,10 @@
         text-shadow: 2px 2px 4px rgba($color: $green, $alpha: 0.075);
       }
 
+      @include breakpoint-up(desktop) {
+        font-size: $_20px;
+      }
+
       @include breakpoint-up(large) {
         font-size: $_22px;
       }
@@ -136,6 +140,11 @@
       b {
         font-weight: 600;
         font-size: $_15px;
+
+        @include breakpoint-up(desktop) {
+          font-size: $_17px;
+          margin-bottom: 0;
+        }
 
         @include breakpoint-up(large) {
           margin-bottom: 1.25rem;
@@ -156,7 +165,7 @@
       }
 
       @include breakpoint-up(desktop) {
-        font-size: $_16px;
+        font-size: $_17px;
         margin-bottom: 0;
       }
 
@@ -184,7 +193,7 @@
       }
 
       @include breakpoint-up(desktop) {
-        margin-bottom: 3rem;
+        margin-bottom: 4rem;
         column-gap: 0;
         row-gap: 0;
       }
@@ -195,6 +204,10 @@
 
         margin-bottom: 0.4rem;
         font-family: $ibm;
+
+        @include breakpoint-up(desktop) {
+          font-size: $_16px;
+        }
 
         @include breakpoint-up(large) {
           font-size: $_17px;

@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import About from "../views/About.vue";
 import Admin from "../views/Admin.vue";
+import AdminTestimonials from "../views/AdminTestimonials.vue";
 import Cars from "../views/Cars.vue";
 import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
@@ -33,6 +34,11 @@ const routes = [
     path: "/dashboard",
     name: "Admin",
     component: Admin
+  },
+  {
+    path: "/testimonials",
+    name: "AdminTestimonials",
+    component: AdminTestimonials
   }
 ];
 
