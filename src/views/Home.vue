@@ -152,7 +152,7 @@
     </section>
     <section class="map">
       <SubTitle title="Onde estamos" class="light" />
-      <h3>Rua Arquitecto Lobão Vital 172, 4200-374 Porto</h3>
+      <h3>R. Pádua Correia 46, 4400-238 Vila Nova de Gaia</h3>
       <div id="map"></div>
     </section>
     <section class="contacts">
@@ -242,15 +242,15 @@ export default {
 
     this.map = new window.google.maps.Map(document.getElementById("map"), {
       center: new window.google.maps.LatLng(
-        41.128039958016494,
-        -8.610384859283357
+        41.126531701994104,
+        -8.610157358895863
       ),
       zoom: 18,
       mapTypeId: "roadmap"
     });
 
     new window.google.maps.Marker({
-      position: { lat: 41.128039958016494, lng: -8.610384859283357 },
+      position: { lat: 41.126531701994104, lng: -8.610157358895863 },
       map: this.map
     });
   }
