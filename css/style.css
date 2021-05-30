@@ -958,7 +958,7 @@ footer small {
   border-top: 3px solid #432cb2;
   padding: 2.125rem 2rem;
   margin: 0 2rem 3rem;
-  height: 14.25rem;
+  height: 12.25rem;
   cursor: -webkit-grab;
   cursor: grab;
 }
@@ -1011,7 +1011,7 @@ footer small {
 @media (min-width: 120em) {
   .testimonials__card {
     padding: 0 2rem;
-    height: 16.875rem;
+    height: 14.875rem;
   }
 }
 
@@ -1059,15 +1059,15 @@ footer small {
 .testimonials__card__text p {
   letter-spacing: 0.3px;
   margin: 0;
-  text-align: left;
+  text-align: center;
   line-height: 1.6;
   font-size: 0.9375rem;
-  padding-right: 10px;
 }
 
 @media (min-width: 75em) {
   .testimonials__card__text p {
     font-size: 1.0625rem;
+    margin-top: 2rem;
   }
 }
 

@@ -60,7 +60,6 @@ export default {
       let height = document.querySelector(".header").clientHeight;
 
       let current__scroll__pos = window.pageYOffset;
-      console.log(current__scroll__pos);
 
       if (current__scroll__pos > 100) {
         if (this.previous__scroll__pos > current__scroll__pos) {

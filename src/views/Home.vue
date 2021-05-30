@@ -74,6 +74,8 @@
     <section class="testimonials">
       <SubTitle title="O que dizem sobre nós" />
       <vue-glide
+        v-for="i in reviewsLength"
+        :key="i"
         :startAt="0"
         :gap="40"
         :breakpoints="{
@@ -94,35 +96,13 @@
         :bound="true"
         :infinite="false"
       >
-        <vue-glide-slide>
+        <vue-glide-slide
+          v-for="review in testimonials"
+          :key="review.id_testimonial"
+        >
           <TestimonialCard
-            content="Honestidade e qualidade de serviço aliado a preços e condições muito competitivos."
-            name="Neca Long"
-            date="07/06/2019"
-        /></vue-glide-slide>
-        <vue-glide-slide>
-          <TestimonialCard
-            content="Atendimento personalizado e boa avaliação do valor do veículo antigo. Facilidade na burocracia. Um ano de garantia. Recomendo."
-            name="Neca Long"
-            date="07/06/2019"
-        /></vue-glide-slide>
-        <vue-glide-slide>
-          <TestimonialCard
-            content="Simpatia, confiança e prontidão na solução. Obrigada"
-            name="Neca Long"
-            date="07/06/2019"
-        /></vue-glide-slide>
-        <vue-glide-slide>
-          <TestimonialCard
-            content="Excelente atendimento e prestação de serviços 👌"
-            name="Neca Long"
-            date="07/06/2019"
-        /></vue-glide-slide>
-        <vue-glide-slide>
-          <TestimonialCard
-            content="Atendimento, simpatia, transparência nos negócios."
-            name="Neca Long"
-            date="07/06/2019"
+            :content="review.testimonial_text"
+            :name="review.person_name"
         /></vue-glide-slide>
         <template slot="control">
           <button data-glide-dir="<">
@@ -228,6 +208,9 @@ import SubTitle from "@/components/SubTitle.vue";
 import ServicesCard from "@/components/ServicesCard.vue";
 import CarsCard from "@/components/CarsCard.vue";
 import TestimonialCard from "@/components/TestimonialCard.vue";
+import { mapGetters } from "vuex";
+import { Glide, GlideSlide } from "vue-glide-js";
+// import { background } from "../../js/background";
 
 export default {
   name: "Home",
@@ -235,24 +218,44 @@ export default {
     SubTitle,
     ServicesCard,
     CarsCard,
-    TestimonialCard
+    TestimonialCard,
+    [Glide.name]: Glide,
+    [GlideSlide.name]: GlideSlide
   },
-  mounted() {
-    // background();
+  data: () => {
+    return {
+      testimonials: [],
+      reviewsLength: 1
+    };
+  },
+  async mounted() {
+    try {
+      await this.$store.dispatch("setTestimonials");
 
-    this.map = new window.google.maps.Map(document.getElementById("map"), {
-      center: new window.google.maps.LatLng(
-        41.126531701994104,
-        -8.610157358895863
-      ),
-      zoom: 18,
-      mapTypeId: "roadmap"
-    });
+      this.testimonials = this.getTestimonials;
 
-    new window.google.maps.Marker({
-      position: { lat: 41.126531701994104, lng: -8.610157358895863 },
-      map: this.map
-    });
+      console.log(this.testimonials);
+    } catch (error) {
+      return error;
+    }
+  },
+  // mounted() {
+  //   // background();
+  //   // this.map = new window.google.maps.Map(document.getElementById("map"), {
+  //   //   center: new window.google.maps.LatLng(
+  //   //     41.126531701994104,
+  //   //     -8.610157358895863
+  //   //   ),
+  //   //   zoom: 18,
+  //   //   mapTypeId: "roadmap"
+  //   // });
+  //   // new window.google.maps.Marker({
+  //   //   position: { lat: 41.126531701994104, lng: -8.610157358895863 },
+  //   //   map: this.map
+  //   // });
+  // },
+  computed: {
+    ...mapGetters(["getTestimonials"])
   }
 };
 </script>

@@ -1,7 +1,6 @@
 <template>
-  <div class="testimonials__card flex flex-fd-c">
+  <div class="testimonials__card">
     <h3>{{ name }}</h3>
-    <h6>{{ date }}</h6>
     <div class="testimonials__card__text">
       <p>"{{ content }}"</p>
     </div>
@@ -10,7 +9,16 @@
 
 <script>
 export default {
-  props: ["name", "content", "date"]
+  props: {
+    name: {
+      required: true,
+      type: String
+    },
+    content: {
+      required: true,
+      type: String
+    }
+  }
 };
 </script>
 
