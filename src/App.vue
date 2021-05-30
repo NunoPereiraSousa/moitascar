@@ -52,6 +52,7 @@ export default {
     };
   },
   created() {
+    console.clear();
     this.previous__scroll__pos = window.pageYOffset;
     window.addEventListener("scroll", this.handleScroll);
   },

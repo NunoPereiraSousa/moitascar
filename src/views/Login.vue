@@ -40,7 +40,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["getLoggedUser", "getStatus"])
+    ...mapGetters(["getLoggedUser", "getResStatus"])
   },
   methods: {
     async signIn() {
@@ -53,17 +53,28 @@ export default {
 
       try {
         await this.$store.dispatch("setLogin");
-
-        let resStatus = this.getStatus;
-
-        this.loggedUser = this.getLoggedUser;
-
-        console.log(this.loggedUser);
+        let resStatus = this.getResStatus;
         console.log(resStatus);
+
+        if (resStatus == 200) {
+          this.loggedUser = this.getLoggedUser;
+
+          this.resetForm();
+
+          this.$router.push({ name: "Admin" });
+
+          console.log(this.loggedUser);
+          console.log(resStatus);
+        }
       } catch (error) {
         console.log(error);
         return error;
       }
+    },
+    resetForm() {
+      this.login.username = "";
+      this.login.password = "";
+      // this.loggedUser = {};
     }
   }
 };

@@ -363,6 +363,10 @@
   }
 }
 
+.glide:nth-child(1) {
+  display: none;
+}
+
 .map {
   padding: 6rem 2rem;
   position: relative;

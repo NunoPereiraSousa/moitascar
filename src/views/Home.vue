@@ -74,8 +74,7 @@
     <section class="testimonials">
       <SubTitle title="O que dizem sobre nós" />
       <vue-glide
-        v-for="i in reviewsLength"
-        :key="i"
+        v-if="loadedData"
         :startAt="0"
         :gap="40"
         :breakpoints="{
@@ -225,16 +224,18 @@ export default {
   data: () => {
     return {
       testimonials: [],
-      reviewsLength: 1
+      reviewsLength: 1,
+      loadedData: false
     };
   },
-  async mounted() {
+  async created() {
     try {
       await this.$store.dispatch("setTestimonials");
 
-      this.testimonials = this.getTestimonials;
-
-      console.log(this.testimonials);
+      if (this.getStatus == 200) {
+        this.loadedData = true;
+        this.testimonials = this.getTestimonials;
+      }
     } catch (error) {
       return error;
     }
@@ -255,7 +256,22 @@ export default {
   //   // });
   // },
   computed: {
-    ...mapGetters(["getTestimonials"])
+    ...mapGetters(["getTestimonials", "getStatus"]),
+    loaded() {
+      let ready = false;
+
+      if (this.getStatus == 200) {
+        ready = true;
+        // this.loadedData = true;
+
+        console.log(document.querySelector(".glide"));
+      }
+
+      console.log(this.getStatus);
+      console.log(ready);
+
+      return ready;
+    }
   }
 };
 </script>

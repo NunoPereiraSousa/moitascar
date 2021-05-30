@@ -5,21 +5,17 @@ let headers = {
   "Access-Control-Allow-Origin": "*"
 };
 
-export const userConfig = {
-  login: async (username, password) => {
+let token = JSON.parse(localStorage.getItem("token"));
+console.log(token);
+
+export const adminCarsConfig = {
+  getCars: async () => {
     return await axios
-      .post(
-        `${URL}/login`,
-        {
-          username: username,
-          password: password
-        },
-        headers
-      )
+      .get(`${URL}/cars`, headers)
       .then(response => {
+        console.log(response);
         return {
-          token: response.data.processResult.token,
-          loggedUser: response.data.processResult.username,
+          cars: response.data.processResult,
           resStatus: response.status
         };
       })

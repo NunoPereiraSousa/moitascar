@@ -2,11 +2,13 @@ import { testimonialsConfig } from "../../config/testimonials";
 
 export const testimonialModule = {
   state: {
-    testimonials: []
+    testimonials: [],
+    status: ""
   },
   mutations: {
     SET_TESTIMONIALS(state, payload) {
       state.testimonials = payload.testimonials;
+      state.status = payload.status;
     }
   },
   actions: {
@@ -18,6 +20,7 @@ export const testimonialModule = {
     }
   },
   getters: {
-    getTestimonials: state => state.testimonials
+    getTestimonials: state => state.testimonials,
+    getStatus: state => state.status
   }
 };

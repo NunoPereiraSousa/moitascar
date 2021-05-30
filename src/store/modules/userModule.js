@@ -39,6 +39,6 @@ export const userModule = {
     getUser: state => state.user,
     getLoggedUser: state => state.loggedUser,
     getToken: state => state.token,
-    getStatus: state => state.resStatus
+    getResStatus: state => state.resStatus
   }
 };

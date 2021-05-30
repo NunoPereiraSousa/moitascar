@@ -53,6 +53,7 @@ import AddBrand from "@/components/AddBrand.vue";
 import AddModel from "@/components/AddModel.vue";
 import EditCar from "@/components/EditCar.vue";
 import RemoveCar from "@/components/RemoveCar.vue";
+import { mapGetters } from "vuex";
 
 export default {
   components: {
@@ -66,8 +67,23 @@ export default {
   name: "Admin",
   data: () => {
     return {
-      n: 3
+      n: 3,
+      cars: ""
     };
+  },
+  async created() {
+    try {
+      await this.$store.dispatch("setAdminCars");
+      this.cars = this.getCars;
+
+      console.log(this.cars);
+    } catch (error) {
+      return error;
+    }
+    console.log(this.cars);
+  },
+  computed: {
+    ...mapGetters(["getCars"])
   },
   methods: {
     openForm() {
